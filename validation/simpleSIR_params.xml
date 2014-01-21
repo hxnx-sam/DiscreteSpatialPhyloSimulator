@@ -1,0 +1,28 @@
+<?xml version="1.0" standalone="yes"?>
+
+<DSPS>
+<General>
+	<parameter id="Seed" value="12345"/>
+	<parameter id="Path" value="test//"/>
+	<parameter id="Rootname" value="simpleSIR"/>
+	<parameter id="Nreps" value="1"/>
+	<parameter id="Tauleap" value="0"/>
+</General>
+<Sampler>
+	<parameter id="SamplerType" value="individualBasedModel.JustBeforeRecoverySampler"/>
+	<parameter id="justBefore" value="1.0E-16"/>
+</Sampler>
+<Demes>
+	<Deme>
+		<parameter id="DemeUID" value="0"/>
+		<parameter id="DemeName" value="0"/>
+	</Deme>
+</Demes>
+<PopulationStructure>
+	<parameter id="NetworkType" value="FULL"/>
+	<parameter id="NumberOfHostsPerDeme" value="1000"/>
+	<parameter id="ModelType" value="SIR"/>
+	<parameter id="InfectionParameters" value="1,0.5"/>
+</PopulationStructure>
+</DSPS>
+

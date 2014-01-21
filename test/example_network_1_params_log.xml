@@ -1,0 +1,4412 @@
+<?xml version="1.0" standalone="yes"?>
+
+<!-- File Created by DiscreteSpatialPhyloSimulator - 3 Oct 2013 -->
+<!-- Log file created on : 2013/10/31 17:10:32 -->
+
+<DSPS>
+<General>
+	<parameter id="Seed" value="0"/>
+	<parameter id="Path" value="test//"/>
+	<parameter id="Rootname" value="example_network"/>
+	<parameter id="Nreps" value="1"/>
+	<parameter id="Rep" value="1"/>
+	<parameter id="Tauleap" value="0.0"/>
+</General>
+<Demes>
+	<Deme>
+		<parameter id="DemeUID" value="0"/>
+		<parameter id="DemeName" value="Node2"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node751,Node912,Node963"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="1"/>
+		<parameter id="DemeName" value="Node751"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node2,Node209,Node481,Node492,Node550"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="2"/>
+		<parameter id="DemeName" value="Node912"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node2,Node158,Node308"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="3"/>
+		<parameter id="DemeName" value="Node963"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node2"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="4"/>
+		<parameter id="DemeName" value="Node3"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node284,Node310"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="5"/>
+		<parameter id="DemeName" value="Node284"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node3,Node521,Node828"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="6"/>
+		<parameter id="DemeName" value="Node310"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node3,Node1067"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="7"/>
+		<parameter id="DemeName" value="Node4"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node677,Node703"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="8"/>
+		<parameter id="DemeName" value="Node677"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node4,Node121,Node291,Node296,Node590,Node690,Node794"/>
+		<parameter id="MigrationParameters" value="0.14285714285714285,0.14285714285714285,0.14285714285714285,0.14285714285714285,0.14285714285714285,0.14285714285714285,0.14285714285714285"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="9"/>
+		<parameter id="DemeName" value="Node703"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node4,Node926,Node1217"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="10"/>
+		<parameter id="DemeName" value="Node5"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1159"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="11"/>
+		<parameter id="DemeName" value="Node1159"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node5,Node749"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="12"/>
+		<parameter id="DemeName" value="Node7"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node702"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="13"/>
+		<parameter id="DemeName" value="Node702"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node7,Node14,Node437,Node801"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="14"/>
+		<parameter id="DemeName" value="Node14"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node437,Node452,Node702"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="15"/>
+		<parameter id="DemeName" value="Node437"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node14,Node702"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="16"/>
+		<parameter id="DemeName" value="Node452"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node14,Node761"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="17"/>
+		<parameter id="DemeName" value="Node16"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node603,Node610,Node621,Node970"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="18"/>
+		<parameter id="DemeName" value="Node603"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node16,Node299,Node323"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="19"/>
+		<parameter id="DemeName" value="Node610"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node16,Node41"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="20"/>
+		<parameter id="DemeName" value="Node621"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node16"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="21"/>
+		<parameter id="DemeName" value="Node970"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node16"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="22"/>
+		<parameter id="DemeName" value="Node21"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node577,Node914,Node1220,Node1338,Node1363"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="23"/>
+		<parameter id="DemeName" value="Node577"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node21,Node1187"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="24"/>
+		<parameter id="DemeName" value="Node914"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node21,Node1363"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="25"/>
+		<parameter id="DemeName" value="Node1220"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node21,Node216"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="26"/>
+		<parameter id="DemeName" value="Node1338"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node21,Node290,Node1363,Node1459"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="27"/>
+		<parameter id="DemeName" value="Node1363"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node21,Node598,Node914,Node1338"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="28"/>
+		<parameter id="DemeName" value="Node25"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node447,Node1404"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="29"/>
+		<parameter id="DemeName" value="Node447"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node25,Node416,Node913"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="30"/>
+		<parameter id="DemeName" value="Node1404"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node25,Node996,Node1217"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="31"/>
+		<parameter id="DemeName" value="Node37"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node73,Node801"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="32"/>
+		<parameter id="DemeName" value="Node73"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node37,Node130,Node254"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="33"/>
+		<parameter id="DemeName" value="Node801"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node37,Node702"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="34"/>
+		<parameter id="DemeName" value="Node38"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1450"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="35"/>
+		<parameter id="DemeName" value="Node1450"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node38,Node325,Node833,Node862,Node1110"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="36"/>
+		<parameter id="DemeName" value="Node41"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node610"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="37"/>
+		<parameter id="DemeName" value="Node47"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1062"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="38"/>
+		<parameter id="DemeName" value="Node1062"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node47,Node788,Node1291"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="39"/>
+		<parameter id="DemeName" value="Node50"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node287,Node1396"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="40"/>
+		<parameter id="DemeName" value="Node287"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node50,Node69,Node1226,Node1361"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="41"/>
+		<parameter id="DemeName" value="Node1396"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node50"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="42"/>
+		<parameter id="DemeName" value="Node53"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1087,Node1354,Node1385,Node1419"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="43"/>
+		<parameter id="DemeName" value="Node1087"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node53,Node251,Node688,Node1419"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="44"/>
+		<parameter id="DemeName" value="Node1354"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node53,Node128,Node1365"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="45"/>
+		<parameter id="DemeName" value="Node1385"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node53,Node1419"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="46"/>
+		<parameter id="DemeName" value="Node1419"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node53,Node251,Node688,Node1087,Node1385"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="47"/>
+		<parameter id="DemeName" value="Node61"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node667"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="48"/>
+		<parameter id="DemeName" value="Node667"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node61,Node194,Node232"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="49"/>
+		<parameter id="DemeName" value="Node63"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node137,Node264,Node760,Node1221,Node1282,Node1458"/>
+		<parameter id="MigrationParameters" value="0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="50"/>
+		<parameter id="DemeName" value="Node137"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node63,Node1126"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="51"/>
+		<parameter id="DemeName" value="Node264"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node63,Node72,Node1284,Node1342"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="52"/>
+		<parameter id="DemeName" value="Node760"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node63,Node1073,Node1271,Node1316"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="53"/>
+		<parameter id="DemeName" value="Node1221"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node63,Node465,Node1432,Node1458"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="54"/>
+		<parameter id="DemeName" value="Node1282"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node63"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="55"/>
+		<parameter id="DemeName" value="Node1458"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node63,Node72,Node301,Node1221"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="56"/>
+		<parameter id="DemeName" value="Node65"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node86,Node425,Node1023,Node1429"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="57"/>
+		<parameter id="DemeName" value="Node86"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node65,Node812"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="58"/>
+		<parameter id="DemeName" value="Node425"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node65,Node83,Node285,Node590,Node817,Node941,Node1353"/>
+		<parameter id="MigrationParameters" value="0.14285714285714285,0.14285714285714285,0.14285714285714285,0.14285714285714285,0.14285714285714285,0.14285714285714285,0.14285714285714285"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="59"/>
+		<parameter id="DemeName" value="Node1023"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node65"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="60"/>
+		<parameter id="DemeName" value="Node1429"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node65,Node216,Node347,Node1312"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="61"/>
+		<parameter id="DemeName" value="Node69"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node287,Node706,Node1075,Node1226"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="62"/>
+		<parameter id="DemeName" value="Node706"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node69"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="63"/>
+		<parameter id="DemeName" value="Node1075"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node69,Node976"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="64"/>
+		<parameter id="DemeName" value="Node1226"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node69,Node287,Node335,Node779,Node793,Node1019"/>
+		<parameter id="MigrationParameters" value="0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="65"/>
+		<parameter id="DemeName" value="Node72"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node264,Node301,Node784,Node1284,Node1458"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="66"/>
+		<parameter id="DemeName" value="Node301"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node72,Node784,Node1458"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="67"/>
+		<parameter id="DemeName" value="Node784"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node72,Node301,Node783"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="68"/>
+		<parameter id="DemeName" value="Node1284"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node72,Node264,Node1342"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="69"/>
+		<parameter id="DemeName" value="Node130"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node73,Node1040,Node1107,Node1322"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="70"/>
+		<parameter id="DemeName" value="Node254"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node73"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="71"/>
+		<parameter id="DemeName" value="Node83"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node291,Node402,Node425,Node590,Node817"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="72"/>
+		<parameter id="DemeName" value="Node291"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node83,Node121,Node296,Node677,Node743"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="73"/>
+		<parameter id="DemeName" value="Node402"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node83"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="74"/>
+		<parameter id="DemeName" value="Node590"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node83,Node285,Node425,Node677,Node817,Node941"/>
+		<parameter id="MigrationParameters" value="0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="75"/>
+		<parameter id="DemeName" value="Node817"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node83,Node141,Node285,Node425,Node590,Node941"/>
+		<parameter id="MigrationParameters" value="0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="76"/>
+		<parameter id="DemeName" value="Node812"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node86,Node1446"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="77"/>
+		<parameter id="DemeName" value="Node92"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node766,Node1121,Node1267,Node1349"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="78"/>
+		<parameter id="DemeName" value="Node766"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node92,Node1134,Node1267,Node1349"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="79"/>
+		<parameter id="DemeName" value="Node1121"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node92,Node1267,Node1349"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="80"/>
+		<parameter id="DemeName" value="Node1267"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node92,Node469,Node766,Node1121"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="81"/>
+		<parameter id="DemeName" value="Node1349"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node92,Node600,Node766,Node1121"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="82"/>
+		<parameter id="DemeName" value="Node102"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node689,Node1377"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="83"/>
+		<parameter id="DemeName" value="Node689"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node102"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="84"/>
+		<parameter id="DemeName" value="Node1377"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node102,Node959"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="85"/>
+		<parameter id="DemeName" value="Node114"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node150,Node890,Node1061,Node1261"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="86"/>
+		<parameter id="DemeName" value="Node150"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node114,Node356,Node1061,Node1153,Node1165,Node1261"/>
+		<parameter id="MigrationParameters" value="0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="87"/>
+		<parameter id="DemeName" value="Node890"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node114,Node1061,Node1261"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="88"/>
+		<parameter id="DemeName" value="Node1061"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node114,Node150,Node356,Node890,Node1261"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="89"/>
+		<parameter id="DemeName" value="Node1261"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node114,Node150,Node890,Node1061,Node1153"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="90"/>
+		<parameter id="DemeName" value="Node115"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node731,Node1263"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="91"/>
+		<parameter id="DemeName" value="Node731"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node115"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="92"/>
+		<parameter id="DemeName" value="Node1263"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node115,Node524,Node549,Node943"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="93"/>
+		<parameter id="DemeName" value="Node119"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1178"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="94"/>
+		<parameter id="DemeName" value="Node1178"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node119,Node133,Node157,Node195,Node1281"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="95"/>
+		<parameter id="DemeName" value="Node121"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node285,Node291,Node296,Node677,Node794"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="96"/>
+		<parameter id="DemeName" value="Node285"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node121,Node425,Node590,Node817"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="97"/>
+		<parameter id="DemeName" value="Node296"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node121,Node291,Node677,Node794"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="98"/>
+		<parameter id="DemeName" value="Node794"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node121,Node296,Node677"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="99"/>
+		<parameter id="DemeName" value="Node122"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node183,Node530,Node722,Node1143,Node1160,Node1414,Node1415"/>
+		<parameter id="MigrationParameters" value="0.14285714285714285,0.14285714285714285,0.14285714285714285,0.14285714285714285,0.14285714285714285,0.14285714285714285,0.14285714285714285"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="100"/>
+		<parameter id="DemeName" value="Node183"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node122,Node530,Node559,Node1143,Node1160,Node1414"/>
+		<parameter id="MigrationParameters" value="0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="101"/>
+		<parameter id="DemeName" value="Node530"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node122,Node183,Node1143,Node1160"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="102"/>
+		<parameter id="DemeName" value="Node722"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node122,Node125,Node207,Node1143"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="103"/>
+		<parameter id="DemeName" value="Node1143"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node122,Node183,Node530,Node722,Node1160,Node1415"/>
+		<parameter id="MigrationParameters" value="0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="104"/>
+		<parameter id="DemeName" value="Node1160"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node122,Node183,Node530,Node719,Node990,Node1143,Node1415"/>
+		<parameter id="MigrationParameters" value="0.14285714285714285,0.14285714285714285,0.14285714285714285,0.14285714285714285,0.14285714285714285,0.14285714285714285,0.14285714285714285"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="105"/>
+		<parameter id="DemeName" value="Node1414"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node122,Node183,Node502,Node559"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="106"/>
+		<parameter id="DemeName" value="Node1415"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node122,Node756,Node1143,Node1160"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="107"/>
+		<parameter id="DemeName" value="Node123"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1163"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="108"/>
+		<parameter id="DemeName" value="Node1163"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node123,Node163,Node1157"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="109"/>
+		<parameter id="DemeName" value="Node125"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node462,Node722"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="110"/>
+		<parameter id="DemeName" value="Node462"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node125,Node707"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="111"/>
+		<parameter id="DemeName" value="Node128"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1354,Node1365,Node1381,Node1397"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="112"/>
+		<parameter id="DemeName" value="Node1365"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node128,Node1354"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="113"/>
+		<parameter id="DemeName" value="Node1381"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node128,Node274,Node795,Node1389"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="114"/>
+		<parameter id="DemeName" value="Node1397"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node128,Node262,Node761"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="115"/>
+		<parameter id="DemeName" value="Node1040"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node130,Node956"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="116"/>
+		<parameter id="DemeName" value="Node1107"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node130,Node204"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="117"/>
+		<parameter id="DemeName" value="Node1322"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node130,Node584,Node1095,Node1206"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="118"/>
+		<parameter id="DemeName" value="Node133"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node157,Node255,Node1178,Node1281"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="119"/>
+		<parameter id="DemeName" value="Node157"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node133,Node195,Node926,Node1178"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="120"/>
+		<parameter id="DemeName" value="Node255"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node133,Node1024,Node1104"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="121"/>
+		<parameter id="DemeName" value="Node1281"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node133,Node1178"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="122"/>
+		<parameter id="DemeName" value="Node1126"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node137"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="123"/>
+		<parameter id="DemeName" value="Node140"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node780"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="124"/>
+		<parameter id="DemeName" value="Node780"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node140,Node279,Node334,Node374"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="125"/>
+		<parameter id="DemeName" value="Node141"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node817,Node941,Node1446"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="126"/>
+		<parameter id="DemeName" value="Node941"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node141,Node425,Node590,Node817"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="127"/>
+		<parameter id="DemeName" value="Node1446"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node141,Node812"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="128"/>
+		<parameter id="DemeName" value="Node148"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node356,Node1170"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="129"/>
+		<parameter id="DemeName" value="Node356"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node148,Node150,Node204,Node723,Node1061"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="130"/>
+		<parameter id="DemeName" value="Node1170"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node148,Node1049,Node1151"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="131"/>
+		<parameter id="DemeName" value="Node1153"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node150,Node510,Node1242,Node1261,Node1356"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="132"/>
+		<parameter id="DemeName" value="Node1165"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node150"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="133"/>
+		<parameter id="DemeName" value="Node195"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node157,Node224,Node611,Node926,Node1178"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="134"/>
+		<parameter id="DemeName" value="Node926"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node157,Node195,Node703"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="135"/>
+		<parameter id="DemeName" value="Node158"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node382,Node779,Node906,Node912,Node1019"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="136"/>
+		<parameter id="DemeName" value="Node382"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node158,Node469"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="137"/>
+		<parameter id="DemeName" value="Node779"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node158,Node778,Node1019,Node1097,Node1226"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="138"/>
+		<parameter id="DemeName" value="Node906"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node158,Node786,Node788,Node1019"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="139"/>
+		<parameter id="DemeName" value="Node1019"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node158,Node292,Node761,Node779,Node906,Node1226"/>
+		<parameter id="MigrationParameters" value="0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="140"/>
+		<parameter id="DemeName" value="Node163"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node479,Node1163"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="141"/>
+		<parameter id="DemeName" value="Node479"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node163,Node521"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="142"/>
+		<parameter id="DemeName" value="Node166"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node294,Node727,Node942,Node1064"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="143"/>
+		<parameter id="DemeName" value="Node294"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node166"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="144"/>
+		<parameter id="DemeName" value="Node727"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node166,Node846,Node1152"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="145"/>
+		<parameter id="DemeName" value="Node942"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node166,Node846,Node967,Node1152"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="146"/>
+		<parameter id="DemeName" value="Node1064"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node166,Node622,Node967,Node980"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="147"/>
+		<parameter id="DemeName" value="Node170"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node528,Node558"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="148"/>
+		<parameter id="DemeName" value="Node528"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node170,Node558,Node622,Node980,Node1056,Node1441"/>
+		<parameter id="MigrationParameters" value="0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="149"/>
+		<parameter id="DemeName" value="Node558"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node170,Node180,Node528,Node622,Node980,Node1056"/>
+		<parameter id="MigrationParameters" value="0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="150"/>
+		<parameter id="DemeName" value="Node172"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node410,Node1356"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="151"/>
+		<parameter id="DemeName" value="Node410"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node172,Node409,Node1012,Node1356,Node1420"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="152"/>
+		<parameter id="DemeName" value="Node1356"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node172,Node410,Node1005,Node1153,Node1420"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="153"/>
+		<parameter id="DemeName" value="Node180"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node558"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="154"/>
+		<parameter id="DemeName" value="Node182"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node213,Node847"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="155"/>
+		<parameter id="DemeName" value="Node213"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node182,Node557,Node1240"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="156"/>
+		<parameter id="DemeName" value="Node847"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node182,Node204"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="157"/>
+		<parameter id="DemeName" value="Node559"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node183,Node756,Node969,Node1414"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="158"/>
+		<parameter id="DemeName" value="Node187"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node756"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="159"/>
+		<parameter id="DemeName" value="Node756"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node187,Node559,Node869,Node990,Node1415"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="160"/>
+		<parameter id="DemeName" value="Node194"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node667"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="161"/>
+		<parameter id="DemeName" value="Node224"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node195,Node444"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="162"/>
+		<parameter id="DemeName" value="Node611"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node195,Node232"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="163"/>
+		<parameter id="DemeName" value="Node200"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node487,Node1243"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="164"/>
+		<parameter id="DemeName" value="Node487"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node200,Node492,Node630,Node650,Node729,Node749,Node991"/>
+		<parameter id="MigrationParameters" value="0.14285714285714285,0.14285714285714285,0.14285714285714285,0.14285714285714285,0.14285714285714285,0.14285714285714285,0.14285714285714285"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="165"/>
+		<parameter id="DemeName" value="Node1243"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node200"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="166"/>
+		<parameter id="DemeName" value="Node203"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node972"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="167"/>
+		<parameter id="DemeName" value="Node972"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node203,Node846"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="168"/>
+		<parameter id="DemeName" value="Node204"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node356,Node847,Node1107,Node1237"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="169"/>
+		<parameter id="DemeName" value="Node1237"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node204,Node1260"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="170"/>
+		<parameter id="DemeName" value="Node206"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1204"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="171"/>
+		<parameter id="DemeName" value="Node1204"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node206,Node517,Node720,Node1255"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="172"/>
+		<parameter id="DemeName" value="Node207"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node722,Node1035"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="173"/>
+		<parameter id="DemeName" value="Node1035"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node207,Node1051"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="174"/>
+		<parameter id="DemeName" value="Node209"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node751,Node981"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="175"/>
+		<parameter id="DemeName" value="Node981"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node209,Node753"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="176"/>
+		<parameter id="DemeName" value="Node557"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node213"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="177"/>
+		<parameter id="DemeName" value="Node1240"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node213"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="178"/>
+		<parameter id="DemeName" value="Node214"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node473,Node733,Node1157"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="179"/>
+		<parameter id="DemeName" value="Node473"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node214,Node850,Node1144,Node1154"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="180"/>
+		<parameter id="DemeName" value="Node733"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node214,Node850"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="181"/>
+		<parameter id="DemeName" value="Node1157"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node214,Node1163"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="182"/>
+		<parameter id="DemeName" value="Node216"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1220,Node1312,Node1429"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="183"/>
+		<parameter id="DemeName" value="Node1312"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node216,Node347,Node1080,Node1429"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="184"/>
+		<parameter id="DemeName" value="Node217"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1082,Node1228"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="185"/>
+		<parameter id="DemeName" value="Node1082"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node217,Node389"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="186"/>
+		<parameter id="DemeName" value="Node1228"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node217,Node690,Node1432"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="187"/>
+		<parameter id="DemeName" value="Node444"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node224"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="188"/>
+		<parameter id="DemeName" value="Node225"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node465,Node694"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="189"/>
+		<parameter id="DemeName" value="Node465"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node225,Node1221"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="190"/>
+		<parameter id="DemeName" value="Node694"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node225,Node380"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="191"/>
+		<parameter id="DemeName" value="Node227"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node439,Node1459"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="192"/>
+		<parameter id="DemeName" value="Node439"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node227,Node1459"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="193"/>
+		<parameter id="DemeName" value="Node1459"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node227,Node439,Node1338"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="194"/>
+		<parameter id="DemeName" value="Node231"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node325"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="195"/>
+		<parameter id="DemeName" value="Node325"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node231,Node457,Node833,Node1110,Node1450"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="196"/>
+		<parameter id="DemeName" value="Node232"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node611,Node667"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="197"/>
+		<parameter id="DemeName" value="Node251"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node688,Node1087,Node1419"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="198"/>
+		<parameter id="DemeName" value="Node688"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node251,Node600,Node1087,Node1419"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="199"/>
+		<parameter id="DemeName" value="Node1024"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node255"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="200"/>
+		<parameter id="DemeName" value="Node1104"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node255"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="201"/>
+		<parameter id="DemeName" value="Node259"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1009,Node1117"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="202"/>
+		<parameter id="DemeName" value="Node1009"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node259,Node919,Node939,Node1316"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="203"/>
+		<parameter id="DemeName" value="Node1117"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node259,Node657"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="204"/>
+		<parameter id="DemeName" value="Node262"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1397"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="205"/>
+		<parameter id="DemeName" value="Node1342"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node264,Node323,Node1284"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="206"/>
+		<parameter id="DemeName" value="Node270"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node976"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="207"/>
+		<parameter id="DemeName" value="Node976"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node270,Node1075"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="208"/>
+		<parameter id="DemeName" value="Node274"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node414,Node1381,Node1389"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="209"/>
+		<parameter id="DemeName" value="Node414"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node274"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="210"/>
+		<parameter id="DemeName" value="Node1389"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node274,Node1381"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="211"/>
+		<parameter id="DemeName" value="Node278"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node358,Node409,Node1175"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="212"/>
+		<parameter id="DemeName" value="Node358"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node278,Node687"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="213"/>
+		<parameter id="DemeName" value="Node409"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node278,Node410,Node1175"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="214"/>
+		<parameter id="DemeName" value="Node1175"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node278,Node409,Node1271"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="215"/>
+		<parameter id="DemeName" value="Node279"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node374,Node396,Node780"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="216"/>
+		<parameter id="DemeName" value="Node374"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node279,Node396,Node780,Node861,Node1353"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="217"/>
+		<parameter id="DemeName" value="Node396"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node279,Node374,Node692,Node861"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="218"/>
+		<parameter id="DemeName" value="Node521"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node284,Node479,Node544,Node765"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="219"/>
+		<parameter id="DemeName" value="Node828"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node284"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="220"/>
+		<parameter id="DemeName" value="Node1361"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node287,Node1134"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="221"/>
+		<parameter id="DemeName" value="Node289"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node685"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="222"/>
+		<parameter id="DemeName" value="Node685"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node289,Node544"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="223"/>
+		<parameter id="DemeName" value="Node290"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node836,Node1187,Node1335,Node1338"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="224"/>
+		<parameter id="DemeName" value="Node836"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node290,Node1187,Node1335"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="225"/>
+		<parameter id="DemeName" value="Node1187"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node290,Node577,Node836,Node1335"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="226"/>
+		<parameter id="DemeName" value="Node1335"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node290,Node836,Node1187"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="227"/>
+		<parameter id="DemeName" value="Node743"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node291,Node395,Node589"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="228"/>
+		<parameter id="DemeName" value="Node292"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1019"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="229"/>
+		<parameter id="DemeName" value="Node298"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node323"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="230"/>
+		<parameter id="DemeName" value="Node323"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node298,Node299,Node408,Node603,Node1342"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="231"/>
+		<parameter id="DemeName" value="Node299"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node323,Node408,Node603,Node1358"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="232"/>
+		<parameter id="DemeName" value="Node408"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node299,Node323"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="233"/>
+		<parameter id="DemeName" value="Node1358"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node299"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="234"/>
+		<parameter id="DemeName" value="Node308"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node830,Node912"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="235"/>
+		<parameter id="DemeName" value="Node830"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node308"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="236"/>
+		<parameter id="DemeName" value="Node1067"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node310"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="237"/>
+		<parameter id="DemeName" value="Node311"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node380"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="238"/>
+		<parameter id="DemeName" value="Node380"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node311,Node694"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="239"/>
+		<parameter id="DemeName" value="Node317"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1041"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="240"/>
+		<parameter id="DemeName" value="Node1041"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node317,Node457"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="241"/>
+		<parameter id="DemeName" value="Node457"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node325,Node426,Node1041"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="242"/>
+		<parameter id="DemeName" value="Node833"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node325,Node1450"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="243"/>
+		<parameter id="DemeName" value="Node1110"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node325,Node456,Node1450"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="244"/>
+		<parameter id="DemeName" value="Node327"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1316"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="245"/>
+		<parameter id="DemeName" value="Node1316"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node327,Node760,Node919,Node1009"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="246"/>
+		<parameter id="DemeName" value="Node334"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node780,Node973,Node1366"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="247"/>
+		<parameter id="DemeName" value="Node973"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node334"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="248"/>
+		<parameter id="DemeName" value="Node1366"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node334,Node790"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="249"/>
+		<parameter id="DemeName" value="Node335"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1226"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="250"/>
+		<parameter id="DemeName" value="Node344"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1353"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="251"/>
+		<parameter id="DemeName" value="Node1353"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node344,Node374,Node425,Node1441"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="252"/>
+		<parameter id="DemeName" value="Node347"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1312,Node1429"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="253"/>
+		<parameter id="DemeName" value="Node355"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node497"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="254"/>
+		<parameter id="DemeName" value="Node497"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node355,Node472,Node481"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="255"/>
+		<parameter id="DemeName" value="Node723"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node356,Node488"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="256"/>
+		<parameter id="DemeName" value="Node687"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node358"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="257"/>
+		<parameter id="DemeName" value="Node367"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1270"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="258"/>
+		<parameter id="DemeName" value="Node1270"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node367,Node1097"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="259"/>
+		<parameter id="DemeName" value="Node861"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node374,Node396,Node692"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="260"/>
+		<parameter id="DemeName" value="Node469"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node382,Node600,Node1267"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="261"/>
+		<parameter id="DemeName" value="Node389"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1082"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="262"/>
+		<parameter id="DemeName" value="Node391"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node620,Node895"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="263"/>
+		<parameter id="DemeName" value="Node620"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node391"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="264"/>
+		<parameter id="DemeName" value="Node895"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node391,Node1197"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="265"/>
+		<parameter id="DemeName" value="Node395"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node589,Node743"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="266"/>
+		<parameter id="DemeName" value="Node589"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node395,Node743"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="267"/>
+		<parameter id="DemeName" value="Node692"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node396,Node683,Node861"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="268"/>
+		<parameter id="DemeName" value="Node398"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node832"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="269"/>
+		<parameter id="DemeName" value="Node832"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node398,Node1179"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="270"/>
+		<parameter id="DemeName" value="Node1012"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node410"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="271"/>
+		<parameter id="DemeName" value="Node1420"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node410,Node1356"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="272"/>
+		<parameter id="DemeName" value="Node416"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node447,Node712,Node1014"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="273"/>
+		<parameter id="DemeName" value="Node712"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node416"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="274"/>
+		<parameter id="DemeName" value="Node1014"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node416"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="275"/>
+		<parameter id="DemeName" value="Node426"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node457,Node774"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="276"/>
+		<parameter id="DemeName" value="Node774"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node426"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="277"/>
+		<parameter id="DemeName" value="Node913"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node447"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="278"/>
+		<parameter id="DemeName" value="Node449"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node769,Node869,Node1391"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="279"/>
+		<parameter id="DemeName" value="Node769"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node449,Node1073,Node1129,Node1391"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="280"/>
+		<parameter id="DemeName" value="Node869"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node449,Node756"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="281"/>
+		<parameter id="DemeName" value="Node1391"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node449,Node584,Node769,Node994,Node1008,Node1129"/>
+		<parameter id="MigrationParameters" value="0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="282"/>
+		<parameter id="DemeName" value="Node761"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node452,Node962,Node1019,Node1397"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="283"/>
+		<parameter id="DemeName" value="Node456"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node690,Node1110"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="284"/>
+		<parameter id="DemeName" value="Node690"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node456,Node677,Node1228"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="285"/>
+		<parameter id="DemeName" value="Node707"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node462"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="286"/>
+		<parameter id="DemeName" value="Node600"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node469,Node688,Node698,Node778,Node1349"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="287"/>
+		<parameter id="DemeName" value="Node470"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node488,Node522,Node624"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="288"/>
+		<parameter id="DemeName" value="Node488"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node470,Node723"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="289"/>
+		<parameter id="DemeName" value="Node522"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node470"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="290"/>
+		<parameter id="DemeName" value="Node624"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node470,Node509"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="291"/>
+		<parameter id="DemeName" value="Node471"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node632,Node745,Node857,Node1250"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="292"/>
+		<parameter id="DemeName" value="Node632"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node471,Node857,Node1262"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="293"/>
+		<parameter id="DemeName" value="Node745"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node471,Node857"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="294"/>
+		<parameter id="DemeName" value="Node857"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node471,Node632,Node649,Node745"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="295"/>
+		<parameter id="DemeName" value="Node1250"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node471,Node549,Node1142"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="296"/>
+		<parameter id="DemeName" value="Node472"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node497"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="297"/>
+		<parameter id="DemeName" value="Node850"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node473,Node733"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="298"/>
+		<parameter id="DemeName" value="Node1144"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node473,Node1246"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="299"/>
+		<parameter id="DemeName" value="Node1154"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node473,Node1161"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="300"/>
+		<parameter id="DemeName" value="Node475"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1150"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="301"/>
+		<parameter id="DemeName" value="Node1150"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node475,Node483,Node518,Node765"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="302"/>
+		<parameter id="DemeName" value="Node480"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node512,Node764"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="303"/>
+		<parameter id="DemeName" value="Node512"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node480,Node650,Node764"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="304"/>
+		<parameter id="DemeName" value="Node764"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node480,Node512,Node1033"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="305"/>
+		<parameter id="DemeName" value="Node481"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node497,Node751,Node1344"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="306"/>
+		<parameter id="DemeName" value="Node1344"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node481,Node1260"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="307"/>
+		<parameter id="DemeName" value="Node483"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node765,Node1150"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="308"/>
+		<parameter id="DemeName" value="Node765"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node483,Node521,Node535,Node646,Node724,Node747,Node947,Node1150"/>
+		<parameter id="MigrationParameters" value="0.125,0.125,0.125,0.125,0.125,0.125,0.125,0.125"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="309"/>
+		<parameter id="DemeName" value="Node492"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node487,Node729,Node751,Node991"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="310"/>
+		<parameter id="DemeName" value="Node630"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node487,Node490,Node991,Node1057"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="311"/>
+		<parameter id="DemeName" value="Node650"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node487,Node512,Node550,Node749"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="312"/>
+		<parameter id="DemeName" value="Node729"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node487,Node492,Node570,Node749,Node991"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="313"/>
+		<parameter id="DemeName" value="Node749"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node487,Node550,Node650,Node729,Node991,Node1159"/>
+		<parameter id="MigrationParameters" value="0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.16666666666666666"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="314"/>
+		<parameter id="DemeName" value="Node991"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node487,Node492,Node550,Node630,Node718,Node729,Node749,Node1054"/>
+		<parameter id="MigrationParameters" value="0.125,0.125,0.125,0.125,0.125,0.125,0.125,0.125"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="315"/>
+		<parameter id="DemeName" value="Node490"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node630,Node1057"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="316"/>
+		<parameter id="DemeName" value="Node1057"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node490,Node630"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="317"/>
+		<parameter id="DemeName" value="Node493"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node518"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="318"/>
+		<parameter id="DemeName" value="Node518"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node493,Node1150"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="319"/>
+		<parameter id="DemeName" value="Node499"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node739,Node1345"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="320"/>
+		<parameter id="DemeName" value="Node739"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node499,Node651,Node855"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="321"/>
+		<parameter id="DemeName" value="Node1345"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node499,Node501,Node550,Node744"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="322"/>
+		<parameter id="DemeName" value="Node501"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node744,Node1345"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="323"/>
+		<parameter id="DemeName" value="Node744"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node501,Node1345"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="324"/>
+		<parameter id="DemeName" value="Node502"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node536,Node855,Node1414"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="325"/>
+		<parameter id="DemeName" value="Node536"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node502"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="326"/>
+		<parameter id="DemeName" value="Node855"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node502,Node739"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="327"/>
+		<parameter id="DemeName" value="Node507"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node562"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="328"/>
+		<parameter id="DemeName" value="Node562"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node507,Node552,Node752,Node954,Node1161"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="329"/>
+		<parameter id="DemeName" value="Node509"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node624"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="330"/>
+		<parameter id="DemeName" value="Node510"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1153"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="331"/>
+		<parameter id="DemeName" value="Node517"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1204,Node1255"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="332"/>
+		<parameter id="DemeName" value="Node1255"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node517,Node1204"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="333"/>
+		<parameter id="DemeName" value="Node544"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node521,Node685,Node1149"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="334"/>
+		<parameter id="DemeName" value="Node524"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node526,Node1263"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="335"/>
+		<parameter id="DemeName" value="Node526"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node524,Node1031,Node1251"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="336"/>
+		<parameter id="DemeName" value="Node525"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node552,Node1049"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="337"/>
+		<parameter id="DemeName" value="Node552"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node525,Node562,Node752"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="338"/>
+		<parameter id="DemeName" value="Node1049"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node525,Node1031,Node1170"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="339"/>
+		<parameter id="DemeName" value="Node1031"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node526,Node1049"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="340"/>
+		<parameter id="DemeName" value="Node1251"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node526"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="341"/>
+		<parameter id="DemeName" value="Node622"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node528,Node558,Node1064"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="342"/>
+		<parameter id="DemeName" value="Node980"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node528,Node558,Node1064"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="343"/>
+		<parameter id="DemeName" value="Node1056"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node528,Node558,Node741"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="344"/>
+		<parameter id="DemeName" value="Node1441"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node528,Node1353"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="345"/>
+		<parameter id="DemeName" value="Node535"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node646,Node724,Node765,Node947"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="346"/>
+		<parameter id="DemeName" value="Node646"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node535,Node724,Node765,Node947"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="347"/>
+		<parameter id="DemeName" value="Node724"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node535,Node646,Node765"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="348"/>
+		<parameter id="DemeName" value="Node947"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node535,Node646,Node765"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="349"/>
+		<parameter id="DemeName" value="Node538"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node943"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="350"/>
+		<parameter id="DemeName" value="Node943"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node538,Node1263"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="351"/>
+		<parameter id="DemeName" value="Node1149"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node544"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="352"/>
+		<parameter id="DemeName" value="Node548"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node967"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="353"/>
+		<parameter id="DemeName" value="Node967"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node548,Node942,Node1010,Node1064"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="354"/>
+		<parameter id="DemeName" value="Node549"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1250,Node1263,Node1346"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="355"/>
+		<parameter id="DemeName" value="Node1346"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node549"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="356"/>
+		<parameter id="DemeName" value="Node550"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node650,Node749,Node751,Node991,Node1345"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="357"/>
+		<parameter id="DemeName" value="Node752"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node552,Node562,Node853"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="358"/>
+		<parameter id="DemeName" value="Node969"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node559"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="359"/>
+		<parameter id="DemeName" value="Node954"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node562"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="360"/>
+		<parameter id="DemeName" value="Node1161"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node562,Node1154"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="361"/>
+		<parameter id="DemeName" value="Node568"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node718,Node1053,Node1054"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="362"/>
+		<parameter id="DemeName" value="Node718"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node568,Node747,Node991,Node1053"/>
+		<parameter id="MigrationParameters" value="0.25,0.25,0.25,0.25"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="363"/>
+		<parameter id="DemeName" value="Node1053"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node568,Node718,Node1054"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="364"/>
+		<parameter id="DemeName" value="Node1054"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node568,Node991,Node1053"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="365"/>
+		<parameter id="DemeName" value="Node570"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node729"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="366"/>
+		<parameter id="DemeName" value="Node584"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1095,Node1322,Node1391"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="367"/>
+		<parameter id="DemeName" value="Node1095"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node584,Node1322"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="368"/>
+		<parameter id="DemeName" value="Node598"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1363"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="369"/>
+		<parameter id="DemeName" value="Node698"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node600,Node1197"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="370"/>
+		<parameter id="DemeName" value="Node778"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node600,Node779"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="371"/>
+		<parameter id="DemeName" value="Node1262"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node632"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="372"/>
+		<parameter id="DemeName" value="Node642"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node657,Node1179"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="373"/>
+		<parameter id="DemeName" value="Node657"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node642,Node1074,Node1117"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="374"/>
+		<parameter id="DemeName" value="Node1179"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node642,Node832,Node1272"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="375"/>
+		<parameter id="DemeName" value="Node649"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node857"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="376"/>
+		<parameter id="DemeName" value="Node651"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node739"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="377"/>
+		<parameter id="DemeName" value="Node655"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node818"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="378"/>
+		<parameter id="DemeName" value="Node818"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node655,Node1188"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="379"/>
+		<parameter id="DemeName" value="Node1074"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node657"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="380"/>
+		<parameter id="DemeName" value="Node681"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node771,Node793"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="381"/>
+		<parameter id="DemeName" value="Node771"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node681"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="382"/>
+		<parameter id="DemeName" value="Node793"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node681,Node1226"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="383"/>
+		<parameter id="DemeName" value="Node683"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node692"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="384"/>
+		<parameter id="DemeName" value="Node1197"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node698,Node895"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="385"/>
+		<parameter id="DemeName" value="Node1217"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node703,Node996,Node1404"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="386"/>
+		<parameter id="DemeName" value="Node708"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1010"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="387"/>
+		<parameter id="DemeName" value="Node1010"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node708,Node967"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="388"/>
+		<parameter id="DemeName" value="Node747"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node718,Node765"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="389"/>
+		<parameter id="DemeName" value="Node719"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1160"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="390"/>
+		<parameter id="DemeName" value="Node720"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1151,Node1204"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="391"/>
+		<parameter id="DemeName" value="Node1151"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node720,Node1170"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="392"/>
+		<parameter id="DemeName" value="Node725"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node968"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="393"/>
+		<parameter id="DemeName" value="Node968"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node725,Node1434"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="394"/>
+		<parameter id="DemeName" value="Node846"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node727,Node942,Node972,Node1063,Node1152"/>
+		<parameter id="MigrationParameters" value="0.2,0.2,0.2,0.2,0.2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="395"/>
+		<parameter id="DemeName" value="Node1152"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node727,Node846,Node942"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="396"/>
+		<parameter id="DemeName" value="Node741"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1056"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="397"/>
+		<parameter id="DemeName" value="Node853"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node752"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="398"/>
+		<parameter id="DemeName" value="Node753"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node981"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="399"/>
+		<parameter id="DemeName" value="Node990"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node756,Node1160"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="400"/>
+		<parameter id="DemeName" value="Node1073"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node760,Node769"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="401"/>
+		<parameter id="DemeName" value="Node1271"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node760,Node1175"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="402"/>
+		<parameter id="DemeName" value="Node962"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node761,Node940,Node1188"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="403"/>
+		<parameter id="DemeName" value="Node1033"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node764,Node1167"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="404"/>
+		<parameter id="DemeName" value="Node1134"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node766,Node1361"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="405"/>
+		<parameter id="DemeName" value="Node1129"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node769,Node1391"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="406"/>
+		<parameter id="DemeName" value="Node1097"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node779,Node1270"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="407"/>
+		<parameter id="DemeName" value="Node783"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node784,Node959"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="408"/>
+		<parameter id="DemeName" value="Node959"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node783,Node1080,Node1377"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="409"/>
+		<parameter id="DemeName" value="Node786"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node788,Node906"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="410"/>
+		<parameter id="DemeName" value="Node788"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node786,Node906,Node1062"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="411"/>
+		<parameter id="DemeName" value="Node790"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1366"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="412"/>
+		<parameter id="DemeName" value="Node795"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1381"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="413"/>
+		<parameter id="DemeName" value="Node1188"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node818,Node940,Node962"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="414"/>
+		<parameter id="DemeName" value="Node1063"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node846"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="415"/>
+		<parameter id="DemeName" value="Node860"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node862"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="416"/>
+		<parameter id="DemeName" value="Node862"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node860,Node1317,Node1450"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="417"/>
+		<parameter id="DemeName" value="Node1317"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node862"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="418"/>
+		<parameter id="DemeName" value="Node919"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1009,Node1316"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="419"/>
+		<parameter id="DemeName" value="Node939"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1009,Node1434"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="420"/>
+		<parameter id="DemeName" value="Node1434"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node939,Node968"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="421"/>
+		<parameter id="DemeName" value="Node940"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node962,Node1099,Node1188"/>
+		<parameter id="MigrationParameters" value="0.3333333333333333,0.3333333333333333,0.3333333333333333"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="422"/>
+		<parameter id="DemeName" value="Node1099"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node940"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="423"/>
+		<parameter id="DemeName" value="Node956"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1040"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="424"/>
+		<parameter id="DemeName" value="Node1080"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node959,Node1312"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="425"/>
+		<parameter id="DemeName" value="Node994"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1391"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="426"/>
+		<parameter id="DemeName" value="Node996"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1217,Node1404"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="427"/>
+		<parameter id="DemeName" value="Node1005"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1356"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="428"/>
+		<parameter id="DemeName" value="Node1008"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1391"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="429"/>
+		<parameter id="DemeName" value="Node1167"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1033"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="430"/>
+		<parameter id="DemeName" value="Node1051"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1035"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="431"/>
+		<parameter id="DemeName" value="Node1291"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1062"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="432"/>
+		<parameter id="DemeName" value="Node1142"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1250"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="433"/>
+		<parameter id="DemeName" value="Node1246"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1144"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="434"/>
+		<parameter id="DemeName" value="Node1242"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1153"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="435"/>
+		<parameter id="DemeName" value="Node1272"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1179"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="436"/>
+		<parameter id="DemeName" value="Node1206"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1322"/>
+		<parameter id="MigrationParameters" value="1.0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="437"/>
+		<parameter id="DemeName" value="Node1432"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1221,Node1228"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="438"/>
+		<parameter id="DemeName" value="Node1260"/>
+		<parameter id="NumberOfHosts" value="1"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Node1237,Node1344"/>
+		<parameter id="MigrationParameters" value="0.5,0.5"/>
+	</Deme>
+</Demes>
+<Sampler>
+	<parameter id="SamplerType" value="individualBasedModel.JustBeforeRecoverySampler"/>
+	<parameter id="justBefore" value="1.0E-16"/>
+</Sampler>
+</DSPS>
+<!-- Log file closed on : 2013/10/31 17:10:33 -->
