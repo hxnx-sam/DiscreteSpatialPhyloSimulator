@@ -16,4 +16,17 @@ Code, Test Files & Documentation
 
 The DiscreteSpatialPhyloSimulator is written in Java (Eclipse project).
 The Test folder contains example input XMLs used for testing and the Validation folder contains some simple examples cross checked against results generated in R.
-The Documentation folder contains a short overview of this code.
+The Documentation (doc) folder contains a short overview of this code.
+
+Jar file
+========
+
+Please see the Release folder for the built jar file which runs from the command line:
+
+java -jar DiscreteSpatialPhyloSimulator.jar
+
+or for example
+
+java -jar DiscreteSpatialPhyloSimulator.jar simpleSIR_params.xml
+
+
