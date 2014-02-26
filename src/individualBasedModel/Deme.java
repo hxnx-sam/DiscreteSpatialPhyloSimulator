@@ -134,10 +134,21 @@ public class Deme {
 			totalMigration 		= 0;				// this is a component of the migration hazard, but if INFECTION_OVER_NETWORK, then individuals dont actually move
 		} else {
 			// demeType = MIGRATION_OF_INFECTEDS
+			
 			totalMigration = 0;
 			for (int i = 0; i < migrationParameters.length; i++) {
 				totalMigration += migrationParameters[i];
 			}
+			
+			// 26 Feb 2014 - think this is necessary after all because of getAnotherDeme
+			// divided by total migration to make this relative preference between demes (not including self)
+			cumProbBetweenDemes = new double[migrationParameters.length];
+						
+			cumProbBetweenDemes[0] = migrationParameters[0]/totalMigration;
+			for (int i = 1; i < migrationParameters.length; i++) {
+					cumProbBetweenDemes[i] = cumProbBetweenDemes[i-1] + migrationParameters[i]/totalMigration;
+			}
+			
 		}
 	}
 	
@@ -259,11 +270,11 @@ public class Deme {
 	 */
 	protected Host getHost() {
 		
-		if (numberOfHosts > 1) {
-			int j = Distributions.randomInt(numberOfHosts);
+		if (hosts.size() > 1) {
+			int j = Distributions.randomInt(hosts.size());
 			return ( hosts.get(j) );
 			
-		} else if (numberOfHosts == 1) {
+		} else if (hosts.size() == 1) {
 			return hosts.get(0);
 			
 		} else {
@@ -373,7 +384,7 @@ public class Deme {
 		
 		Host anotherHost = null;
 		if ( (demeType == DemeType.MIGRATION_OF_INFECTEDS) || (neighbours == null) || (neighbours.size() == 0) ) {
-			if ( containsHost(notThisHost) && (numberOfHosts > 1) ) {
+			if ( containsHost(notThisHost) && (hosts.size() > 1) ) {
 				anotherHost = getHost();
 				while (anotherHost.equals(notThisHost)) {
 					anotherHost = getHost();
@@ -405,7 +416,7 @@ public class Deme {
 				
 			} else {
 				// if own deme
-				if ( containsHost(notThisHost) && (numberOfHosts > 1) ) {
+				if ( containsHost(notThisHost) && (hosts.size() > 1) ) {
 					anotherHost = getHost();
 					while (anotherHost.equals(notThisHost)) {
 						anotherHost = getHost();
@@ -816,7 +827,12 @@ public class Deme {
 			//for (int i = 0; i < migrationParameters.length; i++) {
 			//	h += migrationParameters[i];
 			//}
-			h = (double)totalMigration * (double)numberOfHosts;				// migration to any deme (but this one) x hosts
+			
+			// this is migration of any host within the deme (not just the infecteds)
+			// h = (double)totalMigration * (double)hosts.size();				// migration to any deme (but this one) x hosts
+			
+			// migration of infecteds only
+			h = (double)totalMigration * (double)numberInfected();			// migration to any deme (but this one) x infecteds
 		}
 		return h;
 	}
@@ -886,8 +902,13 @@ public class Deme {
 			}
 				
 		} else if (eventChoice == 2) {
-			// MIGRATION
-			Host aHost  = getHost();
+			// MIGRATION of INFECTEDS
+			
+			// this is migration of any host
+			// Host aHost  = getHost();
+			
+			// this is migration of infecteds only
+			Host aHost  = getInfectedHost();
 			Deme toDeme = getAnotherDeme();
 			
 			if ((aHost != null) && (toDeme != null) ) {

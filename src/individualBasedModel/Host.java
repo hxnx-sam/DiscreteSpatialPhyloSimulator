@@ -49,7 +49,7 @@ public class Host {
 	// constructors
 	public Host(Deme myDeme) {
 		this.uid 	= nextHostUID();
-		this.name   = ""+uid;
+		this.name   = "H"+String.format("%07d", uid);	//""+uid;
 		this.myDeme = myDeme;
 	}
 	

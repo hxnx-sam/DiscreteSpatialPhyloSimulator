@@ -100,7 +100,7 @@ public class SchedulerTest {
 		}
 		
 		System.out.println("- run events -");
-		theScheduler.runEvents(null, null, 0);
+		theScheduler.runEvents(null, null, null, 0);
 	}
 
 }

@@ -82,7 +82,7 @@ public class TreePrunerTest {
 		System.out.println(theScheduler.getEvents().get(0).toString());
 		
 		System.out.println("Run events in Scheduler");
-		theScheduler.runEvents(null, null, 0);
+		theScheduler.runEvents(null, null, null, 0);
 		
 		tt = theScheduler.getTransmissionTree();
 	}

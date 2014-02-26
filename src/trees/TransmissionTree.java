@@ -13,6 +13,7 @@ import individualBasedModel.Event;
  * @created 26 Nov 2012
  * @version 26 Nov 2012
  * @version 17 June 2013 - for DiscreteSpatialPhyloSimulator (not Demes, as in Nov 2012)
+ * @version 26 Feb  2014 - correction to sampled nodes
  */
 public class TransmissionTree {
 
@@ -166,31 +167,111 @@ public class TransmissionTree {
 	 */
 	protected void removeUnsampledTips() {
 		
-		List<Node> toProcess 	  = new ArrayList<Node>();
-		toProcess.add(rootNode);
-		
-		while (toProcess.size() > 0) {
-			Node tn = toProcess.remove(0);
-				
-			if (tn.getNumberOfChildren() > 0) {
-				
-				((TransmissionNode)tn).removeUnsampledTipChildren();
-				toProcess.addAll(tn.getChildren());
-				
-			} else {
-				// this is a tip
-				if (tn instanceof SampledNode) {
-					// this is a sampled node
-					//System.out.println("Keeping "+tn.getName() );
-					
-				} else {
-					// this is an unsampled tip
-					System.out.println("TransmissionTree.removeUnsampledTips - WARNING Should have already removed "+tn.getName());
-				}
+		/*
+		int numTips = 0;
+		int numSampledTips = 0;
+		for (Node tn : nodes) {
+			if (tn.getNumberOfChildren() == 0) {
+				numTips++;
+			}
+			if (tn instanceof SampledNode) {
+				numSampledTips++;
 			}
 		}
+		System.out.println("Numtips = "+numTips+" num sampled tips = "+numSampledTips);
+		
+		while (numTips != numSampledTips) {
+			
+			numTips 				  = 0;
+			numSampledTips 			  = 0;
+		
+			List<Node> toProcess 	  = new ArrayList<Node>();
+			toProcess.add(rootNode);
+		
+			while (toProcess.size() > 0) {
+				Node tn = toProcess.remove(0);
+				
+				if (tn.getNumberOfChildren() > 0) {
+				
+					((TransmissionNode)tn).removeUnsampledTipChildren();
+					toProcess.addAll(tn.getChildren());
+				
+				} else {
+					
+					numTips++;
+					
+					// this is a tip
+					if (tn instanceof SampledNode) {
+						// this is a sampled node
+						//System.out.println("Keeping "+tn.getName() );
+						numSampledTips++;
+						
+					} else {
+						// this is an unsampled tip
+						System.out.println("TransmissionTree.removeUnsampledTips - WARNING Should have already removed "+tn.getName());
+					}
+				}
+			}
+
+			System.out.println("Numtips = "+numTips+" num sampled tips = "+numSampledTips);
+		
+		}
+		*/
+		
+		keepSampled();
+		
 		
 	}
+	
+	private void keepSampled() {
+		
+		//System.out.println("Keep sampled");
+		boolean again = true;
+		
+		while (again) {
+			// remove unsampled tips
+			List<Node> toProcess = new ArrayList<Node>();
+			toProcess.add(rootNode);
+		
+			while (toProcess.size() > 0) {
+				Node tn = toProcess.remove(0);
+				if (tn instanceof TransmissionNode) {
+					((TransmissionNode)tn).removeUnsampledTipChildren();
+				}
+			
+				if (tn.getNumberOfChildren() > 0) {
+					toProcess.addAll(tn.getChildren());
+				}
+			}
+		
+			// there will now be stubs which have now become unsampled tips
+			// count how many tips and sampled tips there are now and redo if necessary
+			int numTips 		= 0;
+			int numSampledTips 	= 0;
+		
+			toProcess.add(rootNode);
+			while (toProcess.size() > 0) {
+				Node tn = toProcess.remove(0);
+				if (tn.getNumberOfChildren() == 0) {
+					numTips++;
+					if (tn instanceof SampledNode) {
+						numSampledTips++;
+					}
+				} else {
+					toProcess.addAll(tn.getChildren());
+				}
+			}
+		
+			again = (numTips != numSampledTips);
+			if (numSampledTips == 0) {
+				again = false;
+			}
+			//System.out.println("number of tips = "+numTips+" number of sampled tips = "+numSampledTips);
+		}
+		
+		
+	}
+	
 	
 	/**
 	 * removes one child nodes from the tree (permantently) - use this after removeUnsampledTips (call from TreePruner)

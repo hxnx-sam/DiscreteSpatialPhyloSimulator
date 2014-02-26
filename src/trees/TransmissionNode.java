@@ -194,13 +194,20 @@ public class TransmissionNode implements Node, Cloneable {
 		
 			for (Node child : children) {
 			
+				// child is a tip
 				if (child.getNumberOfChildren() == 0) {
 					if (child instanceof SampledNode) {
 						// child is a sampled node so keep
 						toKeep.add(child);
-					}
+					} //else {
+						//System.out.println("removing unsampled tip "+child.getName());
+					//}
 				} else {
-					// child is not a tip, so keep
+					// child is not a tip - not sure about this
+					//if (child instanceof TransmissionNode) {
+					//	((TransmissionNode)child).removeUnsampledTipChildren();
+					//}
+					
 					toKeep.add(child);
 				}
 			
@@ -211,6 +218,8 @@ public class TransmissionNode implements Node, Cloneable {
 		}
 		
 	}
+	
+	
 
 	public void adoptSingleGrandChildren() {
 		

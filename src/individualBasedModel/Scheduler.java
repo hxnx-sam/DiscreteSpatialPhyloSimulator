@@ -362,10 +362,14 @@ public class Scheduler {
 	/**
 	 * runs events in the list, and generates new events as appropriate
 	 * runs all events in list within leap time
+	 * The eventLogger records certain types of events (as specified at initialisation),
+	 * but there is a separate migration logger (if not null) to record just the movement events
+	 * this is because animal movements are recorded by a separate system to infections in real life.
 	 * @param eventLogger
 	 * @param populationLogger
+	 * @param migrationLogger
 	 */
-	public void runEvents(Logger eventLogger, Logger populationLogger, double leap) {
+	public void runEvents(Logger eventLogger, Logger populationLogger, Logger migrationLogger, double leap) {
 		
 		// temporary fix
 		// make sure stopping condition is set for SI
@@ -420,6 +424,10 @@ public class Scheduler {
 				} //else {
 				//	System.out.println("Success for: "+eventPerformed.toString());
 				//}
+				
+				if (migrationLogger != null) {
+					migrationLogger.recordEvent(eventPerformed);
+				}
 				
 				if (tt != null) {
 					// add event to transmission tree

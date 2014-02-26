@@ -8,6 +8,7 @@ import java.util.*;
  * @created 1 July 2013
  * @version 1 July 2013
  * @version 2 July 2013
+ * @version 26 Feb 2014
  */
 public class TreePruner {
 

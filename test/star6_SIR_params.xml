@@ -1,0 +1,50 @@
+<?xml version="1.0" standalone="yes"?>
+
+<DSPS>
+<General>
+	<parameter id="Seed" value="123457"/>
+	<parameter id="Path" value="test//"/>
+	<parameter id="Rootname" value="star6_SIR"/>
+	<parameter id="Nreps" value="5"/>
+	<parameter id="Tauleap" value="0"/>
+</General>
+<Sampler>
+	<parameter id="SamplerType" value="individualBasedModel.RandomInfectedSampler"/>
+	<parameter id="probabilityOfSamplingInfected" value="0.5"/>
+</Sampler>
+<Demes>
+	<Deme>
+		<parameter id="DemeUID" value="0"/>
+		<parameter id="DemeName" value="Deme0"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="1"/>
+		<parameter id="DemeName" value="Deme1"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="2"/>
+		<parameter id="DemeName" value="Deme2"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="3"/>
+		<parameter id="DemeName" value="Deme3"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="4"/>
+		<parameter id="DemeName" value="Deme4"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="5"/>
+		<parameter id="DemeName" value="Deme5"/>
+	</Deme>
+</Demes>
+<PopulationStructure>
+	<parameter id="NetworkType" value="STAR"/>
+	<parameter id="NumberOfHostsPerDeme" value="100"/>
+	<parameter id="ModelType" value="SIR"/>
+	<parameter id="InfectionParameters" value="1,0.5"/>
+	<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+	<parameter id="ProbabilityInfectionAnyOtherDeme" value="0.1"/>
+</PopulationStructure>
+</DSPS>
+

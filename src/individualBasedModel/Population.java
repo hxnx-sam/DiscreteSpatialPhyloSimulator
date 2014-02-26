@@ -329,6 +329,21 @@ public class Population {
 	}
 	
 	/**
+	 * sets the network structure if one of the named types
+	 */
+	private void setNetworkStructure() {
+		if (popType.equals(PopulationType.FULL)) {
+			setFullConnectivity();
+		} else if (popType.equals(PopulationType.LINE)) {
+			setLineConnectivity();
+		} else if (popType.equals(PopulationType.STAR)) {
+			setStarConnectivity();
+		} else if (popType.equals(PopulationType.RANDOM)) {
+			setRandomConnectivity();
+		}
+	}
+	
+	/**
 	 * sets network structure according to popType and pedge
 	 * called from setPopulationStructure(List<Parameter> ps)
 	 */
@@ -361,6 +376,7 @@ public class Population {
 		for (Parameter p : ps) {
 			if (p.getId().equals("NetworkType")) {
 				popType = PopulationType.valueOf( p.getValue() );
+				setNetworkStructure();
 				
 			} else if (p.getId().equals("ProbabilityConnect")) {
 				pedge   = Double.parseDouble( p.getValue() );
@@ -456,7 +472,6 @@ public class Population {
 		return e;
 	}
 	
-	
 	/**
 	 * perform an Event - will farm out to Demes
 	 * @param e
@@ -471,8 +486,8 @@ public class Population {
 			// set success = true to allow the event to be processed in runEvents
 			e.success = true;
 			
-		} else if (e.getType() == EventType.MIGRATION) {
-			System.out.println("MIGRATION not implemented yet");
+		//} else if (e.getType() == EventType.MIGRATION) {
+		//	System.out.println("MIGRATION not implemented yet");
 				
 		} else {
 				

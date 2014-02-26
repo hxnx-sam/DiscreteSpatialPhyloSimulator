@@ -14,6 +14,7 @@ import java.util.*;
  * @version 6  Sept 2013
  * @version 27 Sept 2013
  * @version 3  Oct  2013 - SI and SIR are working
+ * @version 25 Feb  2014
  * 
  */
 
@@ -22,7 +23,7 @@ public class DiscreteSpatialPhyloSimulator {
 	//////////////////////////////////////////////////////////////////////////////////
 	// class variables
 	
-	public final static String 				  version 		= "DiscreteSpatialPhyloSimulator - 3 Oct 2013";
+	public final static String 				  version 		= "DiscreteSpatialPhyloSimulator - 25 Feb 2014";
 	protected 	 static List<List<Parameter>> params;		// from configuration XML
 	
 	protected static String		path 	 					= "test//";
@@ -39,6 +40,7 @@ public class DiscreteSpatialPhyloSimulator {
 	
 	protected Logger	populationLogger;
 	protected Logger	eventLogger;
+	protected Logger	migrationLogger = null;
 	protected Logger	logFile;
 	protected int		rep;
 	
@@ -86,11 +88,19 @@ public class DiscreteSpatialPhyloSimulator {
 		} else if (theScheduler.thePopulation.getDemesModelType() == ModelType.SEIR) {
 			eventLogger		 = new Logger(path, rootname + "_" +rep + "_exposureEventLog", ".csv", EventType.EXPOSURE);	
 		} else {
+			// records everything
 			eventLogger		 = new Logger(path, rootname + "_" +rep + "_eventLog", ".csv");
 		}
 		eventLogger.setEchoEvery(0);
 		
-		System.out.println("** WARNING NOT IMPLEMENTED MIGRATION LOGGING YET **");
+		/*
+		 * migration log (not always present)
+		 */
+		if (theScheduler.thePopulation.getDemeType() == DemeType.MIGRATION_OF_INFECTEDS) {
+			migrationLogger  = new Logger(path, rootname + "_" + rep + "_migrationEventLog", ".csv", EventType.MIGRATION);
+		}
+		
+		//System.out.println("** WARNING NOT IMPLEMENTED MIGRATION LOGGING YET **");
 		
 	}
 	
@@ -220,8 +230,9 @@ public class DiscreteSpatialPhyloSimulator {
 		theScheduler.setThePopulation(thePopulation);
 		
 		System.out.println("** Replicate "+rep+" of "+nreps+" **");
-		System.out.println("- infect the first host -");
-		theScheduler.thePopulation.setIndexCaseAnyDeme();
+		System.out.println("- infect the first host in the first deme -");
+		//theScheduler.thePopulation.setIndexCaseAnyDeme();
+		theScheduler.thePopulation.setIndexCaseFirstDeme();
 		
 		System.out.println("- generate the first infection event and add to Scheduler -");
 		
@@ -247,17 +258,27 @@ public class DiscreteSpatialPhyloSimulator {
 	public void run() {
 		System.out.println("- run events -");
 		if (tauleap <= 0) {
-			theScheduler.runEvents(eventLogger, populationLogger, 0);
+			theScheduler.runEvents(eventLogger, populationLogger, migrationLogger, 0);
 		} else {
-			theScheduler.runEvents(eventLogger, populationLogger, tauleap);
+			theScheduler.runEvents(eventLogger, populationLogger, migrationLogger, tauleap);
 		}
 		System.out.println("- end state -");
 		System.out.println(theScheduler.toOutput());
 	}
 	
 	public void finish() {
-		populationLogger.closeFile();
-		eventLogger.closeFile();
+		if (populationLogger != null) {
+			populationLogger.closeFile();
+		}
+		
+		if (eventLogger != null) {
+			eventLogger.closeFile();
+		}
+		
+		if (migrationLogger != null) {
+			migrationLogger.closeFile();
+		}
+		
 		logFile.closeFileWithStamp();
 		
 		System.out.println("* Write transmission trees to file *");
@@ -388,7 +409,7 @@ public class DiscreteSpatialPhyloSimulator {
 					again = false;
 				}
 			}
-			
+			keyboard.close();
 		} else {
 			if (args[0].equals("validation")) {
 				validation();

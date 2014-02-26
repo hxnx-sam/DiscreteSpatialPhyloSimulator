@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 
-<!-- File Created by DiscreteSpatialPhyloSimulator - 3 Oct 2013 -->
-<!-- Log file created on : 2013/10/24 08:38:22 -->
+<!-- File Created by DiscreteSpatialPhyloSimulator - 25 Feb 2014 -->
+<!-- Log file created on : 2014/02/26 17:39:54 -->
 
 <DSPS>
 <General>
@@ -19,7 +19,7 @@
 		<parameter id="NumberOfHosts" value="1000"/>
 		<parameter id="ModelType" value="SIR"/>
 		<parameter id="InfectionParameters" value="1.0,0.5"/>
-		<parameter id="DemeType" value="MIGRATION_OF_INFECTEDS"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
 	</Deme>
 </Demes>
 <Sampler>
@@ -27,4 +27,4 @@
 	<parameter id="justBefore" value="1.0E-16"/>
 </Sampler>
 </DSPS>
-<!-- Log file closed on : 2013/10/24 08:38:23 -->
+<!-- Log file closed on : 2014/02/26 17:39:55 -->
