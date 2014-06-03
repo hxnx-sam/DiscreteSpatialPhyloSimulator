@@ -5,6 +5,7 @@ package individualBasedModel;
  * @author Samantha Lycett
  * @created 24 Sept 2013
  * @version 27 Sept 2013
+ * @version 3 June 2014 - include birth and death
  */
 public class Hazard {
 
@@ -13,6 +14,8 @@ public class Hazard {
 	double infectOtherHazard 		= 0;
 	double recoveryHazard			= 0;
 	double migrationHazard			= 0;
+	double birthHazard				= 0;
+	double deathHazard				= 0;
 	double totalHazard				= -1;
 	
 	// add other hazards later
@@ -57,6 +60,14 @@ public class Hazard {
 		return migrationHazard;
 	}
 	
+	public double getBirthHazard() {
+		return birthHazard;
+	}
+	
+	public double getDeathHazard() {
+		return deathHazard;
+	}
+	
 	////////////////////////////////////////////////////////////////////////
 	// Setters
 	
@@ -92,11 +103,19 @@ public class Hazard {
 		this.migrationHazard = migrationHazard;
 	}
 	
+	public void setBirthHazard(double birthHazard) {
+		this.birthHazard = birthHazard;
+	}
+	
+	public void setDeathHazard(double deathHazard) {
+		this.deathHazard = deathHazard;
+	}
+	
 	/////////////////////////////////////////////////////////////////////////
 	
 	public double getTotalHazard() {
 		if (totalHazard == -1) {
-			totalHazard = exposedToInfectedHazard + infectOtherHazard + recoveryHazard + migrationHazard;
+			totalHazard = exposedToInfectedHazard + infectOtherHazard + recoveryHazard + migrationHazard + birthHazard + deathHazard;
 		}
 		return totalHazard;
 	}

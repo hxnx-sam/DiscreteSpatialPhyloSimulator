@@ -7,6 +7,7 @@ import java.util.*;
  * 
  * @author Samantha Lycett
  * @version 31 Oct 2013 - included optional reading of edge weights
+ * @version 2 Maya 2014
  */
 public class ReadEdgeList {
 
@@ -123,7 +124,14 @@ public class ReadEdgeList {
 						
 					}
 					
-				} 
+				} else {
+					// check if should add name2 anyway with no neighbours or weights
+					if (!names.contains(name2)) {
+						names.add(name2);
+						neighbours.add( new ArrayList<String>() );
+						neighbourWeights.add( new ArrayList<Double>() );
+					}
+				}
 				
 			}
 			

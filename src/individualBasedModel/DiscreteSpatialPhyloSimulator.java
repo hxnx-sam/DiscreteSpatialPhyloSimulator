@@ -15,6 +15,7 @@ import java.util.*;
  * @version 27 Sept 2013
  * @version 3  Oct  2013 - SI and SIR are working
  * @version 25 Feb  2014
+ * @version 3 June 2014 - added birth & death (SJL)
  * 
  */
 
@@ -23,7 +24,7 @@ public class DiscreteSpatialPhyloSimulator {
 	//////////////////////////////////////////////////////////////////////////////////
 	// class variables
 	
-	public final static String 				  version 		= "DiscreteSpatialPhyloSimulator - 25 Feb 2014";
+	public final static String 				  version 		= "DiscreteSpatialPhyloSimulator - 3 June 2014";
 	protected 	 static List<List<Parameter>> params;		// from configuration XML
 	
 	protected static String		path 	 					= "test//";
@@ -32,6 +33,7 @@ public class DiscreteSpatialPhyloSimulator {
 	protected static int		repCounter		 			= 0;
 	protected static long		seed;
 	protected static double		tauleap						= 0;
+	protected static String		stopWhen					= "default";
 
 	/////////////////////////////////////////////////////////////////////////////////
 	// instance variables
@@ -119,6 +121,7 @@ public class DiscreteSpatialPhyloSimulator {
 		simParams.add(new String[]{"Nreps",""+nreps});
 		simParams.add(new String[]{"Rep",""+rep});
 		simParams.add(new String[]{"Tauleap",""+tauleap});
+		simParams.add(new String[]{"StopWhen",stopWhen});
 		logFile.writeParametersXML(simParams,1);
 		logFile.write("</General>");
 		
@@ -195,6 +198,27 @@ public class DiscreteSpatialPhyloSimulator {
 	public void initialise() {
 		
 		Population thePopulation	 = new Population();
+		
+		if (!stopWhen.equals("default")) {
+			String els[] = stopWhen.split(",");
+			for (String cond : els) {
+				if (cond.equals("NoI")) {
+					theScheduler.setStopWhenNoI(true);
+				} else if (cond.equals("AllI")) {
+					theScheduler.setStopWhenAllI(true);
+				} else if (cond.equals("AllR")) {
+					theScheduler.setStopWhenAllR(true);
+				} else if (cond.startsWith("maxIts")) {
+					int maxits = Integer.parseInt( cond.split("=")[1] );
+					theScheduler.setMaxIts(maxits);
+				} else if (cond.startsWith("maxTime")) {
+					double mt = Double.parseDouble( cond.split("=")[1] );
+					theScheduler.setMaxTime(mt);
+				} else {
+					System.out.println("Sorry cant understand stopWhen="+cond);
+				}
+			}
+		}
 		
 		// create set of demes and sampler
 		for (List<Parameter> ps : params) {
@@ -314,6 +338,8 @@ public class DiscreteSpatialPhyloSimulator {
 						nreps = Integer.parseInt(p.getValue());
 					} else if (p.getId().equals("Tauleap")) {
 						tauleap = Double.parseDouble(p.getValue());
+					} else if (p.getId().equals("StopWhen")) {
+						stopWhen = p.getValue();
 					} else {
 						System.out.println("DiscreteSpatialPhyoSimulator.readParametersFromXML - sorry couldnt understand "+p.getId()+" "+p.getValue());
 					}

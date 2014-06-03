@@ -7,6 +7,7 @@ package individualBasedModel;
  * @version 17 June 2013
  * @version 26 Sept 2013
  * @version 5  Oct  2013
+ * @version 3 June 2014 - added birth and death events
  */
 public class Event implements Comparable<Event> {
 
@@ -137,6 +138,40 @@ public class Event implements Comparable<Event> {
 		this.toDeme			= theHost.myDeme;
 	}
 
+	/**
+	 * Birth of one host in a deme; the new host is already supplied (and should have deme set to the input deme)
+	 * @param aHost
+	 * @param theDeme
+	 * @param creationTime
+	 * @param actionTime
+	 */
+	public void setBirthEvent(Host aHost, Deme theDeme, double creationTime, double actionTime) {
+		this.fromDeme	    = theDeme;
+		this.toDeme		    = theDeme;
+		this.fromHost		= aHost;
+		this.toHost			= aHost;
+		this.creationTime	= creationTime;
+		this.actionTime		= actionTime;
+		this.type			= EventType.BIRTH;
+	}
+	
+	/**
+	 * Death of one host in a deme
+	 * @param aHost
+	 * @param theDeme
+	 * @param creationTime
+	 * @param actionTime
+	 */
+	public void setDeathEvent(Host aHost, Deme theDeme, double creationTime, double actionTime) {
+		this.fromDeme	    = theDeme;
+		this.toDeme		    = theDeme;
+		this.fromHost		= aHost;
+		this.toHost			= aHost;
+		this.creationTime	= creationTime;
+		this.actionTime		= actionTime;
+		this.type			= EventType.DEATH;
+	}
+	
 	/**
 	 * Set success of event in Scheduler, if the event actually happened
 	 * @param success

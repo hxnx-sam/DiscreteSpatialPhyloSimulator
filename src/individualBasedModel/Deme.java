@@ -23,6 +23,7 @@ import math.Distributions;
  * @version 3  Oct  2013 - actually changed mind about NetworkNode; use use networks package to generate connectivity patterns and integrate though population
  * @version 11 Oct  2013 - hack for network
  * @version 11 Nov  2013 - changed default for demeType to INFECTION_OVER_NETWORK - this ensures that the cumProbBetweenDemes is initialised properly
+ * @version 3 June 2014 - birth and death (pop turnover)
  */
 //public class Deme implements NetworkNode {
 public class Deme {
@@ -61,6 +62,8 @@ public class Deme {
 	protected double[]			migrationParameters = null;
 	protected double[]			cumProbBetweenDemes = null;							// only not null if NETWORK
 	protected double			totalMigration 		= 0;
+	protected double			birthRate		    = 0;
+	protected double			deathRate			= 0;
 	
 	
 	// parameters for individuals within deme
@@ -152,6 +155,14 @@ public class Deme {
 		}
 	}
 	
+	
+	public void setBirthRate(double birthRate) {
+		this.birthRate = birthRate;
+	}
+	
+	public void setDeathRate(double deathRate) {
+		this.deathRate = deathRate;
+	}
 
 	// set methods for Hosts in this deme
 		
@@ -224,6 +235,9 @@ public class Deme {
 			
 			countHostStates();
 		}
+
+		// 3 June 2014 - make sure that the number of hosts is up to date.
+		numberOfHosts = hosts.size();
 		
 	}
 	
@@ -250,6 +264,9 @@ public class Deme {
 			
 			countHostStates();
 		}
+		
+		// 3 June 2014 - make sure that the number of hosts is up to date.
+		numberOfHosts = hosts.size();
 	}
 	
 	//////////////////////////////////
@@ -450,6 +467,12 @@ public class Deme {
 		params.add(new String[] {"DemeName",getName()} );
 		params.add(new String[]{"NumberOfHosts",""+hosts.size() } );
 		params.add(new String[]{"ModelType",""+modelType} );
+		
+		if ((birthRate > 0) || (deathRate > 0)) {
+			params.add(new String[]{"BirthRate",""+birthRate});
+			params.add(new String[]{"DeathRate",""+deathRate});
+		}
+		
 		String[] ip = new String[infectionParameters.length + 1];
 		ip[0] = "InfectionParameters";
 		for (int i = 0; i < infectionParameters.length; i++) {
@@ -476,6 +499,8 @@ public class Deme {
 			}
 			params.add(mp);
 		}
+		
+		
 		
 		return params;
 	}
@@ -547,6 +572,10 @@ public class Deme {
 						}
 						this.setMigrationParameters(migrationParameters);
 					}
+				} else if (p.getId().equals("BirthRate")) {
+					setBirthRate( Double.parseDouble( p.getValue() ) );
+				} else if (p.getId().equals("DeathRate")) {
+					setDeathRate( Double.parseDouble( p.getValue() ) );
 				}
 				
 			}
@@ -605,6 +634,7 @@ public class Deme {
 	
 	// experimental 6 Sept 2013
 	private void countHostStates() {
+		
 		int S = 0;
 		int E = 0;
 		int I = 0;
@@ -837,12 +867,32 @@ public class Deme {
 		return h;
 	}
 	
+	private double generateBirthHazard() {
+		double h = 0;
+		
+		h = birthRate * (double)numberOfHosts;
+		// number of hosts is updated in addHost and removeHost, so this should be OK, but might be as well to check ...
+		
+		return h;
+	}
+	
+	private double generateDeathHazard() {
+		double h = 0;
+		
+		h = deathRate * (double)numberOfHosts;
+		// number of hosts is updated in addHost and removeHost, so this should be OK, but might be as well to check ...
+		
+		return h;
+	}
+	
 	Hazard generateHazards() {
 		Hazard h = new Hazard(this);
 		h.setExposedToInfectedHazard( generateExposedToInfectedHazard() );
 		h.setInfectOtherHazard( generateInfectOtherHazard() );
 		h.setMigrationHazard( generateMigrationHazard() );
 		h.setRecoveryHazard( generateRecoveryHazard() );
+		h.setBirthHazard( generateBirthHazard() );
+		h.setDeathHazard( generateDeathHazard() );
 		h.getTotalHazard();										// calculates total hazard
 		return h;
 	}
@@ -860,7 +910,8 @@ public class Deme {
 	  double totalWeights = h.getTotalHazard();
 	  if (totalWeights > 0) {
 		
-		double[] weights 	= {h.getExposedToInfectedHazard(), h.getInfectOtherHazard(), h.getMigrationHazard(), h.getRecoveryHazard()};
+		//						0								1							2						3						4					5
+		double[] weights 	= {h.getExposedToInfectedHazard(), h.getInfectOtherHazard(), h.getMigrationHazard(), h.getRecoveryHazard(), h.getBirthHazard(), h.getDeathHazard()};
 		
 		int eventChoice  	= Distributions.chooseWithWeights(weights, totalWeights);
 		//int eventChoice  = Distributions.unNormalisedWeightedChoice(cumRateEvents);
@@ -936,7 +987,22 @@ public class Deme {
 			
 			}
 			
+		} else if (eventChoice == 4) {
+			// BIRTH
+			Host aHost 		= new Host(this);
+			aHost.setState(InfectionState.SUSCEPTIBLE);
+			
+			e.setBirthEvent(aHost, this, currentTime, actionTime);
+			
+		} else if (eventChoice == 5) {
+			// DEATH
+			// death can be of any host
+			Host aHost		= getHost();
+			e.setDeathEvent(aHost, this, currentTime, actionTime);
+			
 		} else {
+		
+		
 			System.out.println("Deme.generateEvent - event choice = "+eventChoice+" but this is invalild");
 			e = null;
 		}
@@ -1029,6 +1095,29 @@ public class Deme {
 				//} else {
 				//	System.out.println("Deme.performEvent: WARNING just tried to action inappropriate MIGRATION event (wrong Deme)");
 				//}
+				
+			} else if ( e.getType() == EventType.BIRTH ) {
+				
+
+				// add the new host to this deme
+				if (!hosts.contains(toHost)) {
+					addHost(toHost);
+					e.setSuccess(true);
+				} else {
+					e.setSuccess(false);
+				}
+				
+				
+			} else if ( e.getType() == EventType.DEATH ) {
+				
+				// remove the host from this deme
+				if (hosts.contains(toHost)) {
+					removeHost(toHost);
+					e.setSuccess(true);
+				} else {
+					e.setSuccess(false);
+				}
+				
 				
 			} else {
 				System.out.println("Deme.performEvent: WARNING cant do event "+e.getType());

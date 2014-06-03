@@ -13,7 +13,8 @@ import trees.*;
  * @version 24 July 2013 - only keep top event
  * @version 1 Sept 2013  - updated runEvents(Logger,Logger) to match other runEvents (24 July)
  * @version 26 Sept 2013 - population generates events
- * @vesrion 27 Sept 2013 - stopping criterion
+ * @version 27 Sept 2013 - stopping criterion
+ * @version 3 June 2014 - more stopping criterion
  */
 public class Scheduler {
 
@@ -29,6 +30,7 @@ public class Scheduler {
 	protected double		maxTime			= -1;
 	protected boolean		stopWhenAllI	= false;
 	protected boolean		stopWhenAllR	= true;
+	protected boolean		stopWhenNoI		= false;
 	
 	public Scheduler() {
 		
@@ -68,6 +70,12 @@ public class Scheduler {
 		this.stopWhenAllR = stopWhenAllR;
 	}
 
+	/**
+	 * @param stopWhenNoI the stopWhenNoI to set
+	 */
+	public void setStopWhenNoI(boolean stopWhenNoI) {
+		this.stopWhenNoI = stopWhenNoI;
+	}
 
 	////////////////////////////////////////////////////////////
 
@@ -486,6 +494,9 @@ public class Scheduler {
 			}
 			if (stopWhenAllR) {
 				goOn = goOn && (thePopulation.totalRecovered() < thePopulation.totalHosts());
+			}
+			if (stopWhenNoI) {
+				goOn = goOn && (thePopulation.totalInfected() > 0);
 			}
 			
 		}

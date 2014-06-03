@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="yes"?>
+
+<!-- File Created by DiscreteSpatialPhyloSimulator - 3 June 2014 -->
+<!-- Log file created on : 2014/06/03 15:47:35 -->
+
+<DSPS>
+<General>
+	<parameter id="Seed" value="12345"/>
+	<parameter id="Path" value="test//"/>
+	<parameter id="Rootname" value="simpleSIRBD"/>
+	<parameter id="Nreps" value="1"/>
+	<parameter id="Rep" value="1"/>
+	<parameter id="Tauleap" value="0.0"/>
+	<parameter id="StopWhen" value="NoI,AllI,AllR,maxIts=10000"/>
+</General>
+<Demes>
+	<Deme>
+		<parameter id="DemeUID" value="0"/>
+		<parameter id="DemeName" value="0"/>
+		<parameter id="NumberOfHosts" value="1000"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="BirthRate" value="0.001"/>
+		<parameter id="DeathRate" value="5.0E-4"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+	</Deme>
+</Demes>
+<Sampler>
+	<parameter id="SamplerType" value="individualBasedModel.JustBeforeRecoverySampler"/>
+	<parameter id="justBefore" value="1.0E-16"/>
+</Sampler>
+</DSPS>
+<!-- Log file closed on : 2014/06/03 15:47:35 -->

@@ -137,6 +137,11 @@ public class TransmissionTree {
 				System.out.println("TransmissionTree.processEvent - WARNING - Sampling event is not correctly specified");
 			}
 			
+		} else if ((etype == EventType.BIRTH) || (etype == EventType.DEATH)) {
+			// temp
+			//System.out.println(e.toOutput());
+			// DO NOTHING
+			
 		} else {
 		
 			// get the already existing transmission node from the fromHost

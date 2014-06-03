@@ -11,9 +11,11 @@ import java.util.List;
 
 /**
  * class to read in Deme properties and connections and make XML
- * defaults set for H7N9 work
+ * defaults set for H7N9 work (12 Nov 2013)
+ * defaults set for Line & Star comparison work (2 May 2014)
  * @author Samantha Lycett
  * @version 12 Nov 2013
+ * @version 2 May 2014
  */
 public class WriteStructuredPopulationConfigurationXML {
 
@@ -37,7 +39,9 @@ public class WriteStructuredPopulationConfigurationXML {
 	Sampler 		theSampler		= new JustBeforeRecoverySampler();
 	PopulationType 	popType 		= PopulationType.NETWORK;
 	ModelType		modelType		= ModelType.SIR;
-	String[]		infectionParams = {"InfectionParameters", "1", "0.5"};
+	//String[]		infectionParams = {"InfectionParameters", "1", "0.5"};
+	String[]		infectionParams = {"InfectionParameters", "0.1", "0.05"};
+	
 	
 	Logger logFile;
 	
@@ -181,18 +185,23 @@ public class WriteStructuredPopulationConfigurationXML {
 		
 		// deme neighbours
 		int numN    	= neighbourNames.size();
-		String[] nn 	= new String[numN+1];
-		nn[0]			= "Neighbours";
 		
-		String[] migs 	= new String[numN+1];
-		migs[0]			= "MigrationParameters";
-		for (int i = 0; i < numN; i++) {
-			nn[i+1] 	= neighbourNames.get(i);
-			migs[i+1]	= ""+neighbourWeights.get(i);
+		if (numN > 0) {
+		
+			String[] nn 	= new String[numN+1];
+			nn[0]			= "Neighbours";
+		
+			String[] migs 	= new String[numN+1];
+			migs[0]			= "MigrationParameters";
+			for (int i = 0; i < numN; i++) {
+				nn[i+1] 	= neighbourNames.get(i);
+				migs[i+1]	= ""+neighbourWeights.get(i);
+			}
+		
+			demeParams.add(nn);
+			demeParams.add(migs);
+		
 		}
-		
-		demeParams.add(nn);
-		demeParams.add(migs);
 		
 		logFile.write("\t<Deme>");
 		logFile.writeParametersXML(demeParams, 2);
@@ -247,10 +256,48 @@ public class WriteStructuredPopulationConfigurationXML {
 		
 	}
 	
+	public static void line_and_star_test() {
+		
+		String path 		 = "D://slycett//phylo_inference//line_and_star//";
+		String demeSizesName = "demeSizes6.txt";
+		String[] types		 = {"star6","line6"};
+		
+		
+		for (String tt : types) {
+
+			WriteStructuredPopulationConfigurationXML writer = new WriteStructuredPopulationConfigurationXML();
+			writer.nreps 		 = 50;
+			
+			String edgeListName  = tt+"_edgeList.txt";
+			String rootname		 = tt;
+			String simpath		 = path + tt + "//";
+			String simname		 = tt;
+		
+			// paths for input deme sizes and edges
+			writer.setDemeSizesName(demeSizesName);
+			writer.setEdgeListName(edgeListName);
+		
+			// paths for xml
+			writer.setPath(path);
+			writer.setRootname(rootname);
+		
+			// paths for simulations
+			writer.setSimpath(simpath);
+			writer.setSimname(simname);
+		
+			writer.readEdgeList();
+			writer.readDemeSizes();
+			writer.writeConfigurationFile();
+		
+		}
+		
+	}
+	
 	public static void main(String[] args) {
 		System.out.println("** WriteStructuredPopulationConfigurationXML **");
 		
-		test_H7N9();
+		//test_H7N9();
+		line_and_star_test();
 		
 		System.out.println("** END **");
 	}
