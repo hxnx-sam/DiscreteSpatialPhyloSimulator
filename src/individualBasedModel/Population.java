@@ -11,6 +11,7 @@ import io.*;
  * @version 1 July 2013
  * @version 24 July 2013
  * @version 27 Sept 2013
+ * @version 11 July 2014 - facility to add a number of identical demes (NumberOfDemes), useful for RANDOM network models
  */
 public class Population {
 
@@ -29,6 +30,8 @@ public class Population {
 	
 	private EventGenerator eventGenerator 	= new EventGenerator();
 	
+	boolean reportSummary			= false;
+	
 	public Population() {
 		
 	}
@@ -44,11 +47,32 @@ public class Population {
 	///////////////////////////////////////////////////////////////////////////
 	// methods for io
 	
+	public String totalPopulationState() {
+		
+		int[] ts = totalStates();
+		String line = ""+ts[0];
+		for (int i = 1; i < ts.length; i++) {
+			line = line + delim + ts[i];
+		}
+		
+		return line;
+	}
+	
+	public String totalPopulationStateHeader() {
+		String line = "S" + delim + "E" + delim + "I" + delim + "R" + delim + "M";
+		return line;
+	}
+	
+	
 	/**
 	 * returns the host states of each deme, in a format suitable for io
 	 * @return
 	 */
 	public String populationState() {
+		
+	  if (reportSummary) {
+		return totalPopulationState();
+	  } else {
 		
 		String line = "";
 		
@@ -69,6 +93,7 @@ public class Population {
 		}
 		
 		return line;
+		}
 	}
 	
 	/**
@@ -76,6 +101,10 @@ public class Population {
 	 * @return
 	 */
 	public String populationStateHeader() {
+		
+	  if (reportSummary) {
+		return totalPopulationStateHeader();
+	  } else {
 		
 		String line = "";
 		
@@ -96,6 +125,7 @@ public class Population {
 		}
 		
 		return line;
+	  }
 		
 	}
 
@@ -374,9 +404,20 @@ public class Population {
 		List<String[]> demePairs = null;
 		
 		for (Parameter p : ps) {
-			if (p.getId().equals("NetworkType")) {
+			if (p.getId().equals("NumberOfDemes")) {
+				
+				// SJL 11 July 2014
+				// adds a number of blank demes - these will be parameterised by all deme parameters
+				// WARNING setting this will cancel out anything set above in the XML to do with <Demes>
+				int nDemes = Integer.parseInt( p.getValue() );
+				this.demes = new ArrayList<Deme>();
+				for (int i = 0; i < nDemes; i++) {
+					demes.add( new Deme() );
+				}
+				
+			} else if (p.getId().equals("NetworkType")) {
 				popType = PopulationType.valueOf( p.getValue() );
-				setNetworkStructure();
+				//setNetworkStructure();
 				
 			} else if (p.getId().equals("ProbabilityConnect")) {
 				pedge   = Double.parseDouble( p.getValue() );
@@ -412,6 +453,9 @@ public class Population {
 			} else if (p.getId().equals("ProbabilityInfectionScaledByDemeSize")) {
 				System.out.println("Population.setPopulationStructure - Not implemented yet "+p.getId()+" "+p.getValue());
 				
+			} else if (p.getId().equals("ReportSummary")) {
+				reportSummary = Boolean.parseBoolean( p.getValue().toLowerCase() );
+				
 			} else {
 				System.out.println("Population.setPopulationStructure - sorry dont understand "+p);
 			}
@@ -419,6 +463,8 @@ public class Population {
 		
 		if (demePairs != null) {
 			setNetworkStructure(demePairs);
+		} else {
+			setNetworkStructure();
 		}
 	}
 	
