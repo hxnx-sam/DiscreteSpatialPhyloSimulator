@@ -2,7 +2,10 @@ package individualBasedModel;
 
 import io.*;
 import math.Distributions;
+
 import java.util.*;
+
+import trees.TransmissionNode;
 
 /**
  * Main class
@@ -254,9 +257,11 @@ public class DiscreteSpatialPhyloSimulator {
 		theScheduler.setThePopulation(thePopulation);
 		
 		System.out.println("** Replicate "+rep+" of "+nreps+" **");
-		System.out.println("- infect the first host in the first deme -");
+		//System.out.println("- infect the first host in the first deme -");
 		//theScheduler.thePopulation.setIndexCaseAnyDeme();
-		theScheduler.thePopulation.setIndexCaseFirstDeme();
+		//theScheduler.thePopulation.setIndexCaseFirstDeme();
+		System.out.println("- infect "+theScheduler.thePopulation.initI+" hosts in any deme");
+		theScheduler.thePopulation.setIndexCasesAnyDemes();
 		
 		System.out.println("- generate the first infection event and add to Scheduler -");
 		
@@ -397,6 +402,7 @@ public class DiscreteSpatialPhyloSimulator {
 			
 			Host.resetHostCounter();
 			Deme.resetDemeCounter();
+			TransmissionNode.resetNodeCounter();
 			
 			long t2 = System.currentTimeMillis();
 			System.out.println("* This replicate took = "+(t2-t1)+" milli seconds *");

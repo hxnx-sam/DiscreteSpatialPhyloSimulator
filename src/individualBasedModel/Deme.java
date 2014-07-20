@@ -23,7 +23,8 @@ import math.Distributions;
  * @version 3  Oct  2013 - actually changed mind about NetworkNode; use use networks package to generate connectivity patterns and integrate though population
  * @version 11 Oct  2013 - hack for network
  * @version 11 Nov  2013 - changed default for demeType to INFECTION_OVER_NETWORK - this ensures that the cumProbBetweenDemes is initialised properly
- * @version 3 June 2014 - birth and death (pop turnover)
+ * @version 3 June 2014  - birth and death (pop turnover)
+ * @version 20 July 2014 - added ability to set multiple index cases as any host in any deme
  */
 //public class Deme implements NetworkNode {
 public class Deme {
@@ -251,6 +252,27 @@ public class Deme {
 		Host h = hosts.get(0);
 		h.setState(InfectionState.INFECTED);
 		countHostStates();
+	}
+	
+	/**
+	 * set any of the SUSCEPTIBLE hosts to be INFECTED 
+	 */
+	public boolean setAnyIndexCase() {
+		boolean ok 	= false;
+		Host h 		= getHost(InfectionState.SUSCEPTIBLE);
+		
+		if (h != null) {
+			h.setState(InfectionState.INFECTED);
+			System.out.println("Deme.setAnyIndexCase: deme="+name+" host="+h.getNameWithDeme()+" "+h.getState());
+			ok 		= true;
+		} else {
+			System.out.println("Deme.setAnyIndexCase: WARNING cannot get SUSCEPTIBLE host for Deme="+name);
+			ok		= false;
+		}
+		countHostStates();
+		
+		return ok;
+		
 	}
 	
 	public void removeHost(Host host) {

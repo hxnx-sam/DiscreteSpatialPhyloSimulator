@@ -22,6 +22,13 @@ public class TransmissionNode implements Node, Cloneable {
 		return (nodeCounter);
 	}
 	
+	/**
+	 * only use this to reset the node counter between runs
+	 */
+	public static void resetNodeCounter() {
+		nodeCounter = -1;
+	}
+	
 	///////////////////////////////////
 	
 	

@@ -198,21 +198,20 @@ public class WriteNetworkShapeConfigurationXML {
 	
 	public static void random_test() {
 		
-		String path 			 = "D://slycett//phylo_inference//networks//";
-		String[] types		 	 = {"random1000_01"};
-		PopulationType[] popType = {PopulationType.RANDOM};
-		int[]  nDemes			 = {1000};
-		double probConnect[]	 = {0.1};
-		
-		
+		String path 			 = "D://slycett//phylo_inference//networks//sims//";
+		String[] types		 	 = {"random1000_01","random1000_001","random1000_005","full1000_1"};
+		PopulationType[] popType = {PopulationType.RANDOM, PopulationType.RANDOM, PopulationType.RANDOM, PopulationType.FULL};
+		int[]  nDemes			 = {1000,1000,1000,1000};
+		double probConnect[]	 = {0.1,0.01,0.05,1};
+		int[] nreps				 = {100,100,100,100};
 		
 		for (int i = 0; i < types.length; i++) {
 
 			WriteNetworkShapeConfigurationXML writer = new WriteNetworkShapeConfigurationXML();
-			writer.nreps 		 = 2;
+			writer.nreps 		 = nreps[i];
 			
 			String rootname		 = types[i];
-			String simpath		 = path + types[i] + "//";
+			String simpath		 = path;
 			String simname		 = types[i];
 		
 			// paths for xml
@@ -227,6 +226,7 @@ public class WriteNetworkShapeConfigurationXML {
 			writer.popType = popType[i];
 			writer.numberOfDemes = nDemes[i];
 			writer.probConnect = probConnect[i];
+			
 			writer.writeConfigurationFile();
 		
 		}

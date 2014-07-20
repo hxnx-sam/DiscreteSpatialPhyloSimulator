@@ -12,10 +12,13 @@ import io.*;
  * @version 24 July 2013
  * @version 27 Sept 2013
  * @version 11 July 2014 - facility to add a number of identical demes (NumberOfDemes), useful for RANDOM network models
+ * @version 20 July 2014 - added ability to set multiple index cases as any host in any deme
  */
 public class Population {
 
 	private	  int totalHosts 		 = -1;
+	int 		  initI				 = 1;
+	
 	private   List<Deme> demes		 = new ArrayList<Deme>();
 	//protected List<Host> activeHosts = new ArrayList<Host>();
 	private String	 delim		 	 = ",";
@@ -229,13 +232,43 @@ public class Population {
 	
 	public void setIndexCaseAnyDeme() {
 		if (demes.size() > 1) {
-		int choice = Distributions.randomInt(demes.size());
-		Deme d = demes.get(choice);
-		d.setIndexCase();
+			int choice = Distributions.randomInt(demes.size());
+			Deme d = demes.get(choice);
+			d.setIndexCase();
 		} else {
 			setIndexCaseFirstDeme();
 		}
 	}
+	
+	/**
+	 * sets initI index cases, these can be any host in any deme
+	 */
+	public void setIndexCasesAnyDemes() {
+		
+		for (int i = 0; i < initI; i++) {
+			
+			if (demes.size() > 1) {
+				boolean again = true;
+				int count 	  = 0;
+				
+				while (again) {
+					int choice 	= Distributions.randomInt(demes.size());
+					Deme d 		= demes.get(choice);
+					boolean ok 	= d.setAnyIndexCase();
+					
+					again		= ( !ok ) && ( count < (2*totalHosts()) );
+					count++;
+				}
+				
+			} else {
+				
+				Deme d = demes.get(0);
+				d.setAnyIndexCase();
+			}
+		}
+		
+	}
+	
 	
 	public List<Deme> getDemes() {
 		return demes;
@@ -456,7 +489,11 @@ public class Population {
 			} else if (p.getId().equals("ReportSummary")) {
 				reportSummary = Boolean.parseBoolean( p.getValue().toLowerCase() );
 				
+			} else if (p.getId().equals("InitI")) {
+				initI = Integer.parseInt( p.getValue() );
+				
 			} else {
+			
 				System.out.println("Population.setPopulationStructure - sorry dont understand "+p);
 			}
 		}
