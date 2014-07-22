@@ -13,11 +13,12 @@ import io.*;
  * @version 27 Sept 2013
  * @version 11 July 2014 - facility to add a number of identical demes (NumberOfDemes), useful for RANDOM network models
  * @version 20 July 2014 - added ability to set multiple index cases as any host in any deme
+ * @version 22 July 2014
  */
 public class Population {
 
 	private	  int totalHosts 		 = -1;
-	int 		  initI				 = 1;
+	int 		  initI				 = 0;
 	
 	private   List<Deme> demes		 = new ArrayList<Deme>();
 	//protected List<Host> activeHosts = new ArrayList<Host>();

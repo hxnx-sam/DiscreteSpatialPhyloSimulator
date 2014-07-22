@@ -18,7 +18,8 @@ import trees.TransmissionNode;
  * @version 27 Sept 2013
  * @version 3  Oct  2013 - SI and SIR are working
  * @version 25 Feb  2014
- * @version 3 June 2014 - added birth & death (SJL)
+ * @version 3 June 2014  - added birth & death (SJL)
+ * @version 22 July 2014 - ability to initialise with one or more than one initial infected, default is first host in first deme if initI is not specified
  * 
  */
 
@@ -257,11 +258,19 @@ public class DiscreteSpatialPhyloSimulator {
 		theScheduler.setThePopulation(thePopulation);
 		
 		System.out.println("** Replicate "+rep+" of "+nreps+" **");
-		//System.out.println("- infect the first host in the first deme -");
-		//theScheduler.thePopulation.setIndexCaseAnyDeme();
-		//theScheduler.thePopulation.setIndexCaseFirstDeme();
-		System.out.println("- infect "+theScheduler.thePopulation.initI+" hosts in any deme");
-		theScheduler.thePopulation.setIndexCasesAnyDemes();
+		
+		if (theScheduler.thePopulation.initI == 0) {
+			System.out.println("- infect the first host in the first deme -");
+			theScheduler.thePopulation.initI = 1;
+			theScheduler.thePopulation.setIndexCaseFirstDeme();
+		} else if (theScheduler.thePopulation.initI == -1) {
+			System.out.println("- infect the first host in any deme -");
+			theScheduler.thePopulation.initI = 1;
+			theScheduler.thePopulation.setIndexCaseAnyDeme();
+		} else {
+			System.out.println("- infect "+theScheduler.thePopulation.initI+" hosts in any deme");
+			theScheduler.thePopulation.setIndexCasesAnyDemes();
+		}
 		
 		System.out.println("- generate the first infection event and add to Scheduler -");
 		
