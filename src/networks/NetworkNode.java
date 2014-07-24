@@ -2,6 +2,11 @@ package networks;
 
 import java.util.List;
 
+/**
+ * 
+ * @author slycett
+ * @version 23 July 2014
+ */
 public interface NetworkNode {
 
 	public void 				setNetworkNeighbours(List<NetworkNode> nn);

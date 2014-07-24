@@ -7,15 +7,16 @@ import java.util.*;
 /**
  * class to allow the creation of a Basic network. No parameters.
  * @author Samantha Lycett
- *
+ * @version 23 July 2014
  */
 public class BasicNetwork implements Network {
 	
-	String delim			= ",";
-	String delim2			= "\n";
-	int numberOfNodes 		= 0;
+	NetworkModelType modelType 	= NetworkModelType.GENERAL;
+	String delim				= ",";
+	String delim2				= "\n";
+	int numberOfNodes 			= 0;
 	List<NetworkNode> nodes;
-	boolean directed		= false;
+	boolean directed			= false;
 	
 	public BasicNetwork() {
 		
@@ -129,6 +130,11 @@ public class BasicNetwork implements Network {
 		}
 		
 		return txt.toString();
+	}
+
+	@Override
+	public NetworkModelType getNetworkModelType() {
+		return modelType;
 	}
 
 }

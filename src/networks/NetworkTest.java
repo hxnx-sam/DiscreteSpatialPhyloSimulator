@@ -1,6 +1,8 @@
 package networks;
 
 
+import io.Parameter;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -25,6 +27,7 @@ public class NetworkTest {
 	
 	@Before
 	public void setUp() throws Exception {
+		BasicNode.resetNextID();
 	}
 
 	@After
@@ -77,5 +80,48 @@ public class NetworkTest {
 		
 	}
 	
+	@Test
+	public void testSpatialNetwork() {
+		SpatialModelNetwork network = new SpatialModelNetwork();
+		
+		System.out.println("Network information (empty)");
+		NetworkInformation ni = new NetworkInformation(network);
+		System.out.println(ni);
+		
+		String fname = "test//example_UK_cities.csv";
+		String delim = ",";
+		network.readNodeLocationsFromFile(fname, delim);
+		network.create();
+		
+		System.out.println("Network information (created)");
+		ni = new NetworkInformation(network);
+		System.out.println(ni);
+		
+		System.out.println("First Node:");
+		LocationNetworkNode locN = (LocationNetworkNode)network.getNodes().get(0);
+		System.out.println(locN.neighboursLine());
+		System.out.println(locN.distancesLine());
+		System.out.println(locN.weightsLine());
+		System.out.println();
+		
+		System.out.println("Now restrict to 100km");
+		network.setParameter(new Parameter("distanceThreshold","100"));
+		network.create();
+		
+		System.out.println("Network information (restricted)");
+		ni = new NetworkInformation(network);
+		System.out.println(ni);
+		
+
+		System.out.println("First Node (restricted):");
+		locN = (LocationNetworkNode)network.getNodes().get(0);
+		System.out.println(locN.neighboursLine());
+		System.out.println(locN.distancesLine());
+		System.out.println(locN.weightsLine());
+		System.out.println();
+		
+		System.out.println("- End testSpatialNetwork - ");
+		System.out.println();
+	}
 	
 }

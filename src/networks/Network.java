@@ -7,9 +7,12 @@ import java.util.List;
  * 
  * @author  Samantha Lycett
  * @created 2 Oct 2013
+ * @version 23 July 2014
  */
 public interface Network {
 
+	public NetworkModelType		getNetworkModelType();
+	
 	//public void				setNumberOfNodes(int n);
 	public void 	 			setParameter(Parameter p);
 	public Parameter 			getParameter(Parameter p);

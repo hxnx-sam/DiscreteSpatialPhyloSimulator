@@ -9,6 +9,7 @@ public class RandomNetwork extends BasicNetwork {
 	
 	public RandomNetwork() {
 		super();
+		modelType = NetworkModelType.RANDOM;
 	}
 	
 	/**
@@ -18,6 +19,7 @@ public class RandomNetwork extends BasicNetwork {
 	 */
 	public RandomNetwork(int numberOfNodes, double plink) {
 		super(numberOfNodes);
+		modelType = NetworkModelType.RANDOM;
 		this.plink = plink;
 		create();
 	}

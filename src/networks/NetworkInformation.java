@@ -1,5 +1,10 @@
 package networks;
 
+/**
+ * 
+ * @author slycett
+ * @version 23 July 2014
+ */
 public class NetworkInformation {
 
 	String delim = "\t";
@@ -45,6 +50,7 @@ public class NetworkInformation {
 		StringBuffer txt = new StringBuffer();
 		
 		txt.append("Type"+delim+network.getClass().getName()+delim2);
+		txt.append("ModelType"+delim+network.getNetworkModelType()+delim2);
 		txt.append("Directed"+delim+network.isDirected()+delim2);
 		txt.append("NumberOfNodes"+delim+network.getNumberOfNodes()+delim2);
 		txt.append("NumberOfEdges"+delim+getNumberOfEdges()+delim2);

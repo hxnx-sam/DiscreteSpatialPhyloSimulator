@@ -11,6 +11,7 @@ public class StarNetwork extends BasicNetwork {
 	
 	public StarNetwork() {
 		super();
+		modelType = NetworkModelType.STAR;
 	}
 	
 	/**
@@ -19,6 +20,7 @@ public class StarNetwork extends BasicNetwork {
 	 */
 	public StarNetwork(int numberOfNodes) {
 		super(numberOfNodes);
+		modelType = NetworkModelType.STAR;
 		create();
 	}
 	

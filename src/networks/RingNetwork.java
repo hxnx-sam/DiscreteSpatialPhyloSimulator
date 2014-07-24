@@ -4,6 +4,7 @@ public class RingNetwork extends BasicNetwork {
 
 	public RingNetwork() {
 		super();
+		modelType = NetworkModelType.RING;
 	}
 	
 	/**
@@ -12,6 +13,7 @@ public class RingNetwork extends BasicNetwork {
 	 */
 	public RingNetwork(int numberOfNodes) {
 		super(numberOfNodes);
+		modelType = NetworkModelType.RING;
 		create();
 	}
 	

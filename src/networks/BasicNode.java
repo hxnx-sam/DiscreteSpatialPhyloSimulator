@@ -2,16 +2,32 @@ package networks;
 
 import java.util.*;
 
+/**
+ * 
+ * @author slycett
+ * @version 24 July 2014
+ */
 public class BasicNode implements NetworkNode {
 	
-	static int uid = 0;
+	private static int uid = -1;
+	
+	private static int getNextID() {
+		uid++;
+		return uid;
+	}
+	
+	static void resetNextID() {
+		uid = -1;
+	}
+	
+	//////////////////////////////////////////////////////////////////////////////
 	
 	List<NetworkNode> neighbours = new ArrayList<NetworkNode>();
 	String name;
 	
 	public BasicNode() {
-		name = ""+uid;
-		uid++;
+		name = ""+getNextID();
+		//uid++;
 	}
 
 	@Override

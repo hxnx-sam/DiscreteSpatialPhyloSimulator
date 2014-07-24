@@ -1,11 +1,17 @@
 package networks;
 
+/**
+ * Class to represent a line network (directed)
+ * @author slycett
+ * @version 23 July 2014
+ */
 public class LineNetwork extends BasicNetwork {
 
 	
 	public LineNetwork() {
 		super();
 		directed = true;
+		modelType = NetworkModelType.LINE;
 	}
 	
 	/**
@@ -14,6 +20,7 @@ public class LineNetwork extends BasicNetwork {
 	 */
 	public LineNetwork(int numberOfNodes) {
 		super(numberOfNodes);
+		modelType = NetworkModelType.LINE;
 		create();
 		directed = true;
 	}
