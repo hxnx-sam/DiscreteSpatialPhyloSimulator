@@ -18,9 +18,11 @@ import trees.TransmissionNode;
  * @version 27 Sept 2013
  * @version 3  Oct  2013 - SI and SIR are working
  * @version 25 Feb  2014
- * @version 3 June 2014  - added birth & death (SJL)
+ * @version 3 June 2014 - added birth & death (SJL)
  * @version 22 July 2014 - ability to initialise with one or more than one initial infected, default is first host in first deme if initI is not specified
- * 
+ * @version 9 Sept 2014 - just recompiled
+ * @version 11 Sept 2014 - echo every options
+ * @version 29 Dec 2014 - consolidating development versions
  */
 
 public class DiscreteSpatialPhyloSimulator {
@@ -28,11 +30,12 @@ public class DiscreteSpatialPhyloSimulator {
 	//////////////////////////////////////////////////////////////////////////////////
 	// class variables
 	
-	public final static String 				  version 		= "DiscreteSpatialPhyloSimulator - 3 June 2014";
+	public final static String 				  version 		= "DiscreteSpatialPhyloSimulator - 29 Dec 2014";
 	protected 	 static List<List<Parameter>> params;		// from configuration XML
 	
 	protected static String		path 	 					= "test//";
 	protected static String 	rootname 					= "test";
+	protected static int		echoEvery					= 1000;
 	protected static int		nreps	 					= 1;
 	protected static int		repCounter		 			= 0;
 	protected static long		seed;
@@ -84,7 +87,7 @@ public class DiscreteSpatialPhyloSimulator {
 		 */
 		populationLogger = new Logger(path, rootname + "_" +rep + "_popLog", ".csv");
 		populationLogger.write(theScheduler.toOutputHeader());
-		populationLogger.setEchoEvery(100);
+		populationLogger.setEchoEvery(echoEvery);
 		
 		/*
 		 * event log
@@ -258,6 +261,11 @@ public class DiscreteSpatialPhyloSimulator {
 		theScheduler.setThePopulation(thePopulation);
 		
 		System.out.println("** Replicate "+rep+" of "+nreps+" **");
+		//System.out.println("- infect the first host in the first deme -");
+		//theScheduler.thePopulation.setIndexCaseAnyDeme();
+		//theScheduler.thePopulation.setIndexCaseFirstDeme();
+		//System.out.println("- infect "+theScheduler.thePopulation.initI+" hosts in any deme");
+		//theScheduler.thePopulation.setIndexCasesAnyDemes();
 		
 		if (theScheduler.thePopulation.initI == 0) {
 			System.out.println("- infect the first host in the first deme -");
@@ -271,7 +279,8 @@ public class DiscreteSpatialPhyloSimulator {
 			System.out.println("- infect "+theScheduler.thePopulation.initI+" hosts in any deme");
 			theScheduler.thePopulation.setIndexCasesAnyDemes();
 		}
-		
+
+
 		System.out.println("- generate the first infection event and add to Scheduler -");
 		
 		// make sure it is an infection event for this test
@@ -354,6 +363,8 @@ public class DiscreteSpatialPhyloSimulator {
 						tauleap = Double.parseDouble(p.getValue());
 					} else if (p.getId().equals("StopWhen")) {
 						stopWhen = p.getValue();
+					} else if (p.getId().equals("EchoEvery")) {
+						echoEvery = Integer.parseInt(p.getValue());
 					} else {
 						System.out.println("DiscreteSpatialPhyoSimulator.readParametersFromXML - sorry couldnt understand "+p.getId()+" "+p.getValue());
 					}
@@ -464,7 +475,7 @@ public class DiscreteSpatialPhyloSimulator {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println("** DiscreteSpatialPhyloSimulator **");
+		System.out.println("** "+version+" **");
 		
 		//doExample();
 		//exampleFromXML();

@@ -7,6 +7,11 @@ import java.util.ArrayList;
 
 import math.Distributions;
 
+/**
+ * class to generate sampling events; as proportion of number infected (several settings)
+ * @author slycett2
+ * @version 29 Dec 2014
+ */
 public class RandomInfectedSampler implements Sampler {
 	
 	protected double probabilityOfSamplingInfected 	= 0.5;
@@ -247,6 +252,7 @@ public class RandomInfectedSampler implements Sampler {
 			i++;
 		}
 		
+		i = 0;											// reset i (29 dec 2014)
 		if (found) {
 			while (i < params.size()) {
 				Parameter p = params.get(i);

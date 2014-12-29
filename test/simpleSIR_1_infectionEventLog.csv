@@ -1,4 +1,4 @@
-Log file created on : 2014/02/26 17:39:54
+Log file created on : 2014/12/29 15:01:02
 Record eventType=INFECTION
 EventType,CreationTime,ActionTime,FromDeme-FromHost,ToDeme-ToHost
 INFECTION,0.0,0.3593724413046975,0-H0000000,0-H0000829
