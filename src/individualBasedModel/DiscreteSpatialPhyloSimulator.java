@@ -373,9 +373,7 @@ public class DiscreteSpatialPhyloSimulator {
 		}
 	}
 	
-	/**
-	 * example for testing
-	 */
+	/*
 	static void doExample() {
 		
 		long t1 = System.currentTimeMillis();
@@ -393,19 +391,24 @@ public class DiscreteSpatialPhyloSimulator {
 		
 		System.out.println("* End Example *");
 	}
+	*/
 
-	
+	/*
 	static void exampleFromXML() {
 		//String xmlName = "test//deme1000_tau0_params.xml";
 		String xmlName = "test//example_structure_params.xml";
 		runFromXML(xmlName);
 	}
+	*/
 	
+	/**
+	 * preset validation tests
+	 */
 	static void validation() {
 		repCounter = 0;
-		runFromXML("test//simpleSI_params.xml");
+		runFromXML("validation//simpleSI_params.xml");
 		repCounter = 0;
-		runFromXML("test//simpleSIR_params.xml");
+		runFromXML("validation//simpleSIR_params.xml");
 	}
 	
 	static void runFromXML(String xmlName) {
@@ -443,10 +446,12 @@ public class DiscreteSpatialPhyloSimulator {
 			while (again) {
 				System.out.println("Please enter configuration parameter file xml, include // path separators and .xml extension:");
 				System.out.println("e.g. test//simpleSIR_params.xml:");
+				System.out.println("or enter validation to perform pre-set validation runs, or x to stop:");
 				String xmlName = keyboard.nextLine().trim();
 				if (xmlName.equals("validation")) {
 					validation();
 					again = false;
+					
 				} else if (!xmlName.equals("x")) {
 					runFromXML(xmlName);
 				
@@ -474,13 +479,13 @@ public class DiscreteSpatialPhyloSimulator {
 		
 	}
 	
+	//////////////////////////////////////////
+	// MAIN 
+	//////////////////////////////////////////
+	
 	public static void main(String[] args) {
 		System.out.println("** "+version+" **");
-		
-		//doExample();
-		//exampleFromXML();
 		run(args);
-		
 		System.out.println("** END **");
 	}
 	

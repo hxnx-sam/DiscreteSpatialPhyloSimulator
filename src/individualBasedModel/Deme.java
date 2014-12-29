@@ -25,6 +25,7 @@ import math.Distributions;
  * @version 11 Nov  2013 - changed default for demeType to INFECTION_OVER_NETWORK - this ensures that the cumProbBetweenDemes is initialised properly
  * @version 3 June 2014  - birth and death (pop turnover)
  * @version 20 July 2014 - added ability to set multiple index cases as any host in any deme
+ * @version 29 Dec 2014 - added "NeighbourLinkParameters" as synonym of MigrationParameters
  */
 //public class Deme implements NetworkNode {
 public class Deme {
@@ -542,7 +543,7 @@ public class Deme {
 				} else if (p.getId().equals("Neighbours")) {
 					neighbourDemeNames = p.getValue().split(",");
 					
-				} else if (p.getId().equals("MigrationParameters")) {
+				} else if ( p.getId().equals("MigrationParameters") || (p.getId().equals("NeighbourLinkParameters")) ) {
 					String[] mpTxt = p.getValue().split(",");
 					double[] mp	   = new double[mpTxt.length];
 					for ( int i = 0; i < mpTxt.length; i++) {

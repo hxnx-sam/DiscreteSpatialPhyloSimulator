@@ -16,8 +16,9 @@ import java.util.List;
  * @author Samantha Lycett
  * @version 12 Nov 2013
  * @version 2 May 2014
+ * @version 29 Dec 2014
  */
-public class WriteStructuredPopulationConfigurationXML {
+public class WriteStructuredPopulationConfigurationXML implements ConfigurationXMLInterface {
 
 	String path				= "test//";
 	String rootname			= "example_network";
@@ -60,6 +61,7 @@ public class WriteStructuredPopulationConfigurationXML {
 	/**
 	 * @param path the path to set
 	 */
+	@Override
 	public void setPath(String path) {
 		this.path = path;
 	}
@@ -67,6 +69,7 @@ public class WriteStructuredPopulationConfigurationXML {
 	/**
 	 * @param rootname the rootname to set
 	 */
+	@Override
 	public void setRootname(String rootname) {
 		this.rootname = rootname;
 	}
@@ -74,6 +77,7 @@ public class WriteStructuredPopulationConfigurationXML {
 	/**
 	 * @param simpath the simpath to set
 	 */
+	@Override
 	public void setSimpath(String simpath) {
 		this.simpath = simpath;
 	}
@@ -81,6 +85,7 @@ public class WriteStructuredPopulationConfigurationXML {
 	/**
 	 * @param simname the simname to set
 	 */
+	@Override
 	public void setSimname(String simname) {
 		this.simname = simname;
 	}
@@ -90,6 +95,26 @@ public class WriteStructuredPopulationConfigurationXML {
 	 */
 	public void setEdgeListName(String edgeListName) {
 		this.edgeListName = edgeListName;
+	}
+
+	@Override
+	public void setSeed(long seed) {
+		this.seed = seed;
+	}
+	
+	@Override
+	public void setNreps(int nreps) {
+		this.nreps = nreps;
+	}
+	
+	@Override
+	public void setModelType(String mt) {
+		this.modelType = ModelType.valueOf(mt);
+	}
+	
+	@Override
+	public void setInfectionParameters(String[] ip) {
+		this.infectionParams = ip;
 	}
 	
 	public void setDemeSizesName(String name) {
@@ -112,6 +137,7 @@ public class WriteStructuredPopulationConfigurationXML {
 		demeSizes = new ReadSimpleNamedParameters( path + demeSizesName );
 	}
 	
+	@Override
 	public void writeConfigurationFile() {
 		openFile();
 		writeGeneral();
@@ -125,16 +151,21 @@ public class WriteStructuredPopulationConfigurationXML {
 	
 	void openFile() {
 		logFile = new Logger();
+		logFile.setEchoEvery(0);
 		logFile.setPath(path);
 		logFile.setName(rootname+"_params");
 		logFile.setExt(".xml");
 		logFile.openFile();
 		logFile.write("<DSPS>");
+		
+		System.out.println("Writing xml parameters to "+logFile.path + logFile.name + logFile.ext);
 	}
 	
 	void closeFile() {
 		logFile.write("</DSPS>");
 		logFile.closeFile();
+		
+		System.out.println("Finished writing parameters to "+logFile.path + logFile.name + logFile.ext);
 	}
 	
 
@@ -196,7 +227,8 @@ public class WriteStructuredPopulationConfigurationXML {
 			nn[0]			= "Neighbours";
 		
 			String[] migs 	= new String[numN+1];
-			migs[0]			= "MigrationParameters";
+			//migs[0]			= "MigrationParameters";
+			migs[0]			= "NeighbourLinkParameters";
 			for (int i = 0; i < numN; i++) {
 				nn[i+1] 	= neighbourNames.get(i);
 				migs[i+1]	= ""+neighbourWeights.get(i);

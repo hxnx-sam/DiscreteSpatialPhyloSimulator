@@ -9,7 +9,13 @@ import individualBasedModel.Sampler;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WriteNetworkShapeConfigurationXML {
+/**
+ * class to write specific network shape configuration xmls, e.g. FULL, RANDOM, LINE, STAR etc
+ * @author slycett
+ * @version 29 Dec 2014
+ *
+ */
+public class WriteNetworkShapeConfigurationXML implements ConfigurationXMLInterface {
 
 	String path				= "test//";
 	String rootname			= "example_network";
@@ -49,6 +55,7 @@ public class WriteNetworkShapeConfigurationXML {
 	/**
 	 * @param path the path to set
 	 */
+	@Override
 	public void setPath(String path) {
 		this.path = path;
 	}
@@ -56,6 +63,7 @@ public class WriteNetworkShapeConfigurationXML {
 	/**
 	 * @param rootname the rootname to set
 	 */
+	@Override
 	public void setRootname(String rootname) {
 		this.rootname = rootname;
 	}
@@ -63,6 +71,7 @@ public class WriteNetworkShapeConfigurationXML {
 	/**
 	 * @param simpath the simpath to set
 	 */
+	@Override
 	public void setSimpath(String simpath) {
 		this.simpath = simpath;
 	}
@@ -70,14 +79,46 @@ public class WriteNetworkShapeConfigurationXML {
 	/**
 	 * @param simname the simname to set
 	 */
+	@Override
 	public void setSimname(String simname) {
 		this.simname = simname;
 	}
 
+	@Override
+	public void setSeed(long seed) {
+		this.seed = seed;
+	}
+	
+	@Override
+	public void setNreps(int nreps) {
+		this.nreps = nreps;
+	}
+	
+	@Override
+	public void setModelType(String mt) {
+		this.modelType = ModelType.valueOf(mt);
+	}
+	
+	@Override
+	public void setInfectionParameters(String[] ip) {
+		this.infectionParams = ip;
+	}
+	
+	public void setNumberOfDemes(int numDemes) {
+		this.numberOfDemes = numDemes;
+	}
+	
+	public void setHostsPerDeme(int hostsPerDeme) {
+		this.hostsInDeme = hostsPerDeme;
+	}
 
+	public void setPopulationType(String pt) {
+		popType = PopulationType.valueOf(pt);
+	}
+	
 	//////////////////////////////////////////////////////////////////////////////////
 	
-	
+	@Override
 	public void writeConfigurationFile() {
 		openFile();
 		writeGeneral();
@@ -91,16 +132,23 @@ public class WriteNetworkShapeConfigurationXML {
 	
 	void openFile() {
 		logFile = new Logger();
+		logFile.setEchoEvery(0);
 		logFile.setPath(path);
 		logFile.setName(rootname+"_params");
 		logFile.setExt(".xml");
 		logFile.openFile();
 		logFile.write("<DSPS>");
+
+		System.out.println("Writing xml parameters to "+logFile.path + logFile.name + logFile.ext);
+		
 	}
 	
 	void closeFile() {
 		logFile.write("</DSPS>");
 		logFile.closeFile();
+		
+
+		System.out.println("Finished writing parameters to "+logFile.path + logFile.name + logFile.ext);
 	}
 	
 
@@ -198,7 +246,8 @@ public class WriteNetworkShapeConfigurationXML {
 	
 	public static void random_test() {
 		
-		String path 			 = "D://slycett//phylo_inference//networks//sims//";
+		//String path 			 = "D://slycett//phylo_inference//networks//sims//";
+		String path				 = "test//";
 		String[] types		 	 = {"random1000_01","random1000_001","random1000_005","full1000_1"};
 		PopulationType[] popType = {PopulationType.RANDOM, PopulationType.RANDOM, PopulationType.RANDOM, PopulationType.FULL};
 		int[]  nDemes			 = {1000,1000,1000,1000};
