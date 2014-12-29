@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
 
-<!-- File Created by DiscreteSpatialPhyloSimulator - 25 Feb 2014 -->
-<!-- Log file created on : 2014/02/26 17:39:54 -->
+<!-- File Created by DiscreteSpatialPhyloSimulator - 29 Dec 2014 -->
+<!-- Log file created on : 2014/12/29 15:01:02 -->
 
 <DSPS>
 <General>
@@ -11,6 +11,7 @@
 	<parameter id="Nreps" value="1"/>
 	<parameter id="Rep" value="1"/>
 	<parameter id="Tauleap" value="0.0"/>
+	<parameter id="StopWhen" value="default"/>
 </General>
 <Demes>
 	<Deme>
@@ -27,4 +28,4 @@
 	<parameter id="justBefore" value="1.0E-16"/>
 </Sampler>
 </DSPS>
-<!-- Log file closed on : 2014/02/26 17:39:55 -->
+<!-- Log file closed on : 2014/12/29 15:01:02 -->
