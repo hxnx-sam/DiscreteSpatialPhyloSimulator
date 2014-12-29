@@ -24,6 +24,9 @@ public class WriteStructuredPopulationConfigurationXML {
 	
 	String simpath			= "test//";
 	String simname			= "example_network";
+	
+	int	   echoEvery		= 10000;
+	
 	long   seed  			= -1;
 	int	   nreps 			=  1;
 	double tauleap 			= 0;
@@ -145,6 +148,7 @@ public class WriteStructuredPopulationConfigurationXML {
 		simParams.add(new String[]{"Rootname",simname});
 		simParams.add(new String[]{"Nreps",""+nreps});
 		simParams.add(new String[]{"Tauleap",""+tauleap});
+		simParams.add(new String[]{"EchoEvery",""+echoEvery});
 		
 		logFile.write("<General>");
 		logFile.writeParametersXML(simParams,1);
@@ -293,11 +297,43 @@ public class WriteStructuredPopulationConfigurationXML {
 		
 	}
 	
+	public static void ctsFarmCounty() {
+		
+		String path 			= "D://slycett//phylo_inference//ctsFarmCounty//";
+		String rootname			= "scotgrav";//"scotland";//"farmCounty";
+		String demeSizesName 	= rootname + "_demeSizes.txt";
+		String edgeListName		= rootname + "_edgeList.txt";
+		//String simpath			= path + rootname + "mov//";
+		String simpath			= path + rootname + "//";
+		String simname			= rootname;
+		
+		WriteStructuredPopulationConfigurationXML writer = new WriteStructuredPopulationConfigurationXML();
+		writer.nreps 		 = 50;
+	
+		// paths for input deme sizes and edges
+		writer.setDemeSizesName(demeSizesName);
+		writer.setEdgeListName(edgeListName);
+	
+		// paths for xml
+		writer.setPath(path);
+		writer.setRootname(rootname);
+	
+		// paths for simulations
+		writer.setSimpath(simpath);
+		writer.setSimname(simname);
+	
+		writer.readEdgeList();
+		writer.readDemeSizes();
+		writer.writeConfigurationFile();
+		
+	}
+	
 	public static void main(String[] args) {
 		System.out.println("** WriteStructuredPopulationConfigurationXML **");
 		
 		//test_H7N9();
-		line_and_star_test();
+		//line_and_star_test();
+		ctsFarmCounty();
 		
 		System.out.println("** END **");
 	}
