@@ -23,6 +23,7 @@ import trees.TransmissionNode;
  * @version 9 Sept 2014 - just recompiled
  * @version 11 Sept 2014 - echo every options
  * @version 29 Dec 2014 - consolidating development versions
+ * @version 30 Dec 2014 - checking SEIR
  */
 
 public class DiscreteSpatialPhyloSimulator {
@@ -30,7 +31,7 @@ public class DiscreteSpatialPhyloSimulator {
 	//////////////////////////////////////////////////////////////////////////////////
 	// class variables
 	
-	public final static String 				  version 		= "DiscreteSpatialPhyloSimulator - 29 Dec 2014";
+	public final static String 				  version 		= "DiscreteSpatialPhyloSimulator - 30 Dec 2014";
 	protected 	 static List<List<Parameter>> params;		// from configuration XML
 	
 	protected static String		path 	 					= "test//";
@@ -283,9 +284,9 @@ public class DiscreteSpatialPhyloSimulator {
 
 		System.out.println("- generate the first infection event and add to Scheduler -");
 		
-		// make sure it is an infection event for this test
+		// make sure it is an infection (or exposure) event for this test			// 30 Dec 2014
 		Event e = theScheduler.thePopulation.generateEvent(theScheduler.time);
-		while (e.type != EventType.INFECTION) {
+		while ( (e.type != EventType.INFECTION) && (e.type != EventType.EXPOSURE) ) {
 			e = theScheduler.thePopulation.generateEvent(theScheduler.time);;
 		}
 		
@@ -330,6 +331,8 @@ public class DiscreteSpatialPhyloSimulator {
 		
 		System.out.println("* Write transmission trees to file *");
 		PrunedTreeWriter treesOut = new PrunedTreeWriter(path + rootname + "_" +rep, theScheduler.tt);
+		treesOut.setEcho(false);
+		treesOut.setVerbose(true);
 		treesOut.writeNewickTrees();
 		
 	}

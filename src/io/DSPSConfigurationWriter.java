@@ -11,7 +11,7 @@ import java.util.Scanner;
  * class to write general DSPS configuration xmls
  * @author slycett
  * @created 29 Dec 2014
- * @version 29 Dec 2014
+ * @version 30 Dec 2014
  *
  */
 public class DSPSConfigurationWriter {
@@ -19,6 +19,7 @@ public class DSPSConfigurationWriter {
 	private static Scanner 						keyboard = new Scanner(System.in);
 	private static String						simType;
 	private static ConfigurationXMLInterface 	writer;
+	public final static String 				  	version 		= "DSPSConfigurationWriter - 30 Dec 2014";
 	
 	private static String chooseASetting(String question, List<String> choices, List<String> explains) {
 		
@@ -243,6 +244,19 @@ public class DSPSConfigurationWriter {
 				String popType = chooseASetting(question, choices, explains);
 				netWriter.setPopulationType(popType);
 				
+				if (popType.equals("RANDOM")) {
+					System.out.println("Please enter probability of connection between demes (e.g. 0.1)");
+					String ans2 = keyboard.nextLine().trim();
+					try {
+						double pc = Double.parseDouble(ans2);
+						netWriter.setProbabilityConnect(pc);
+					} catch( NumberFormatException e) {
+						double pc = 0.1;
+						System.out.println("Sorry cant accept "+ans2+" will use probabilityConnect = "+pc);
+						netWriter.setProbabilityConnect(pc);
+					}
+				}
+				
 			} else {
 				System.out.print("Sorry "+simType+" is not supported");
 				numDemes 	 = 100;
@@ -290,7 +304,7 @@ public class DSPSConfigurationWriter {
 	}
 	
 	public static void main (String[] args) {
-		System.out.println("** DSPSConfigurationWriter **");
+		System.out.println("** "+version+" **");
 		
 		run();
 		

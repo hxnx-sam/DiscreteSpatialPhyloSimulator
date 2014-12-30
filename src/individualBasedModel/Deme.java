@@ -843,7 +843,7 @@ public class Deme {
 	private double generateExposedToInfectedHazard() {
 		double h = 0;
 		if (modelType == ModelType.SEIR) {
-			h = infectionParameters[0]*(double)numberExposed();
+			h = infectionParameters[0]*(double)numberExposed();		// E -> I , dI ~ a*E, this is 1st rate - 30 Dec 2014
 		}
 		return h;
 	}
@@ -853,7 +853,7 @@ public class Deme {
 		if ((modelType == ModelType.SIR) || (modelType == ModelType.SI))  {
 			h = infectionParameters[0]*(double)numberInfected();
 		} else if (modelType == ModelType.SEIR) {
-			h = infectionParameters[1]*(double)numberInfected();
+			h = infectionParameters[1]*(double)numberInfected();	// dE ~ b*S*I, this is 2nd rate - 30 Dec 2014 		  
 		} else {
 			System.out.println("Deme.generateInfectionHazard: WARNING unknown modelType");
 		}

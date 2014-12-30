@@ -16,10 +16,19 @@ public class PrunedTreeWriter {
 	String 	   bin_pruExt	= "_binaryPruned";
 	
 	boolean	   echo			= true;
+	boolean	   verbose		= true;
 	
 	public PrunedTreeWriter(String rootname, TransmissionTree tt) {
 		this.rootname = rootname;
 		pruner 		  = new TreePruner(tt);
+	}
+	
+	public void setVerbose(boolean verbose) {
+		this.verbose = verbose;
+	}
+	
+	public void setEcho(boolean echo) {
+		this.echo = echo;
 	}
 	
 	/**
@@ -38,8 +47,11 @@ public class PrunedTreeWriter {
 			outFile.newLine();
 			outFile.close();
 			
-			if (echo) {
+			if (verbose) {
 				System.out.println("Full Tree to "+fname);
+			}
+			
+			if (echo) {
 				System.out.println(line);
 			}
 			
@@ -68,8 +80,11 @@ public class PrunedTreeWriter {
 			outFile.newLine();
 			outFile.close();
 			
-			if (echo) {
+			if (verbose) {
 				System.out.println("Pruned Tree to "+fname);
+			}
+			
+			if (echo) {
 				System.out.println(line);
 			}
 			
@@ -97,8 +112,11 @@ public class PrunedTreeWriter {
 			outFile.newLine();
 			outFile.close();
 			
-			if (echo) {
+			if (verbose) {
 				System.out.println("Binary Pruned Tree to "+fname);
+			}
+			
+			if (echo) {
 				System.out.println(line);
 			}
 			

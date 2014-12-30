@@ -116,6 +116,10 @@ public class WriteNetworkShapeConfigurationXML implements ConfigurationXMLInterf
 		popType = PopulationType.valueOf(pt);
 	}
 	
+	public void setProbabilityConnect(double pc) {
+		this.probConnect = pc;
+	}
+	
 	//////////////////////////////////////////////////////////////////////////////////
 	
 	@Override
@@ -183,7 +187,11 @@ public class WriteNetworkShapeConfigurationXML implements ConfigurationXMLInterf
 		populationParams.add(new String[]{ "NumberOfDemes", ""+numberOfDemes });
 		populationParams.add(new String[]{ "NetworkType", popType.toString() } );
 		populationParams.add(new String[]{ "Directed", dirType});
-		populationParams.add(new String[]{ "ProbabilityConnect", ""+probConnect} );
+		
+		if (popType.equals(PopulationType.RANDOM)) {
+			populationParams.add(new String[]{ "ProbabilityConnect", ""+probConnect} );	
+		}
+		
 		populationParams.add(new String[]{ "ModelType", modelType.toString() } );
 		populationParams.add( infectionParams );
 		populationParams.add(new String[]{ "DemeType", demeType } );
