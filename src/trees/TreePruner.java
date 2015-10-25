@@ -1,6 +1,6 @@
 package trees;
 
-import java.util.*;
+//import java.util.*;
 
 /**
  * class to prune a transmission tree to only the sampled nodes

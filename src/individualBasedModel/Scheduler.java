@@ -453,10 +453,34 @@ public class Scheduler {
 			
 			if (eventPerformed.getType() != EventType.SAMPLING) {
 				// GENERATE NEW EVENT
+				
+				// 24 oct 2015
+				int numActive = (thePopulation.totalExposed() + thePopulation.totalInfected());
+				
+				
+		  		if (numActive > 0) {
+		  			
+		  			if ( stopWhenAllI && (thePopulation.totalInfected() >= thePopulation.totalHosts()) ) {
+		  				System.out.println("Scheduler.runEvents No more events because all individuals are infected");
+		  			} else {
+		  				Event newEvent = null;
+		  				while (newEvent == null) {
+		  					newEvent = thePopulation.generateEvent( time );
+		  				}
+		  				events.add( newEvent );
+		  			}
+		  			
+		  		}
+				
+				/*
 			  	Event newEvent = thePopulation.generateEvent( time );
 			  	if (newEvent != null) {
 			  		events.add( newEvent );
+			  	} else {
+			  		System.out.println("Null event generated");	
 			  	}
+			  	*/
+			  	
 			}
 			
 		  //}
@@ -483,6 +507,12 @@ public class Scheduler {
 			
 			// do next iteration ?
 			goOn = (events.size() > 0);
+			// 24 oct 2015
+			if (!goOn) {
+				System.out.println("Scheduler - no events");
+				System.out.println("Number infected = "+thePopulation.totalInfected());
+			}
+			
 			if (maxTime > 0) {
 				goOn = (time < maxTime);
 			}

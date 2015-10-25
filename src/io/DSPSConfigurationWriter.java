@@ -12,14 +12,14 @@ import java.util.Scanner;
  * @author slycett
  * @created 29 Dec 2014
  * @version 30 Dec 2014
- *
+ * @version 24 Oct 2015 - tidy up
  */
 public class DSPSConfigurationWriter {
 
 	private static Scanner 						keyboard = new Scanner(System.in);
 	private static String						simType;
 	private static ConfigurationXMLInterface 	writer;
-	public final static String 				  	version 		= "DSPSConfigurationWriter - 30 Dec 2014";
+	public final static String 				  	version 		= "DSPSConfigurationWriter - 24 Oct 2015";
 	
 	private static String chooseASetting(String question, List<String> choices, List<String> explains) {
 		
@@ -31,6 +31,7 @@ public class DSPSConfigurationWriter {
 		String ans = keyboard.nextLine().trim();
 		
 		if (ans.equalsIgnoreCase("x")) {
+			System.out.println("* Exiting *");	// 24 oct 2015
 			return null;
 		} else if (choices.contains(ans)) {
 			System.out.println("\t- "+ans+" chosen");
@@ -77,16 +78,23 @@ public class DSPSConfigurationWriter {
 		explains.add("Network containing many hosts per deme and arbitary edges, requires demeSizes and edgeList files");
 		
 		simType = chooseASetting(question, choices, explains);
-		if (simType.equals("ONE-DEME")) {
-			writer = new WriteNetworkShapeConfigurationXML();
-		} else if (simType.equals("TWO-DEME")) {
-			writer = new WriteNetworkShapeConfigurationXML();
-		} else if (simType.equals("SHAPED-NETWORK")) {
-			writer = new WriteNetworkShapeConfigurationXML();
-		} else if (simType.equals("GENERAL-NETWORK")) {
-			writer = new WriteNetworkConfigurationXML();
-		} else if (simType.equals("STRUCTURED-POPULATION")) {
-			writer = new WriteStructuredPopulationConfigurationXML();
+		if (simType == null) {
+			System.out.println("** Done **");
+		} else {
+			if (simType.equals("ONE-DEME")) {
+				writer = new WriteNetworkShapeConfigurationXML();
+			} else if (simType.equals("TWO-DEME")) {
+				writer = new WriteNetworkShapeConfigurationXML();
+			} else if (simType.equals("SHAPED-NETWORK")) {
+				writer = new WriteNetworkShapeConfigurationXML();
+			} else if (simType.equals("GENERAL-NETWORK")) {
+				writer = new WriteNetworkConfigurationXML();
+			} else if (simType.equals("STRUCTURED-POPULATION")) {
+				writer = new WriteStructuredPopulationConfigurationXML();
+			} else {
+				System.out.println("Sorry cant understand "+simType);
+				writer = null;
+			}
 		}
 		
 	}
@@ -184,6 +192,7 @@ public class DSPSConfigurationWriter {
 		
 		chooseSimulationType();
 		
+	   if (writer != null) {
 		
 		if (writer instanceof WriteNetworkShapeConfigurationXML) {
 			WriteNetworkShapeConfigurationXML netWriter = (WriteNetworkShapeConfigurationXML)writer;
@@ -295,12 +304,15 @@ public class DSPSConfigurationWriter {
 		setFileNames();
 		setSeed();
 		setNreps();
+	   } // end writer != null
 		
 	}
 	
 	public static void run() {
 		setup();
-		writer.writeConfigurationFile();
+		if (writer != null) {
+			writer.writeConfigurationFile();
+		}
 	}
 	
 	public static void main (String[] args) {

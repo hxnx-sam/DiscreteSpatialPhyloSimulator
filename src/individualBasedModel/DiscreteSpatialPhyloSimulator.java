@@ -12,18 +12,22 @@ import trees.TransmissionNode;
  * @author sam
  * @created 19 June 2013
  * @version 25 June 2013
- * @version 1 July 2013
+ * @version 1  July 2013
  * @version 24 July 2013 - connections between demes in progress
  * @version 6  Sept 2013
  * @version 27 Sept 2013
  * @version 3  Oct  2013 - SI and SIR are working
  * @version 25 Feb  2014
- * @version 3 June 2014 - added birth & death (SJL)
+ * @version 3  June 2014 - added birth & death (SJL)
  * @version 22 July 2014 - ability to initialise with one or more than one initial infected, default is first host in first deme if initI is not specified
- * @version 9 Sept 2014 - just recompiled
+ * @version 9  Sept 2014 - just recompiled
  * @version 11 Sept 2014 - echo every options
- * @version 29 Dec 2014 - consolidating development versions
- * @version 30 Dec 2014 - checking SEIR
+ * @version 29 Dec  2014 - consolidating development versions
+ * @version 30 Dec  2014 - checking SEIR
+ * @version 1  Jan  2015
+ * @version 23 Mar  2015
+ * @version 24 Oct  2015 - checking validations
+ * @version 25 Oct  2015 - checking validations
  */
 
 public class DiscreteSpatialPhyloSimulator {
@@ -31,7 +35,7 @@ public class DiscreteSpatialPhyloSimulator {
 	//////////////////////////////////////////////////////////////////////////////////
 	// class variables
 	
-	public final static String 				  version 		= "DiscreteSpatialPhyloSimulator - 30 Dec 2014";
+	public final static String 				  version 		= "DiscreteSpatialPhyloSimulator - 25 Oct 2015";
 	protected 	 static List<List<Parameter>> params;		// from configuration XML
 	
 	protected static String		path 	 					= "test//";
@@ -42,6 +46,7 @@ public class DiscreteSpatialPhyloSimulator {
 	protected static long		seed;
 	protected static double		tauleap						= 0;
 	protected static String		stopWhen					= "default";
+	
 
 	/////////////////////////////////////////////////////////////////////////////////
 	// instance variables
@@ -408,14 +413,31 @@ public class DiscreteSpatialPhyloSimulator {
 	 * preset validation tests
 	 */
 	static void validation() {
+		//repCounter = 0;
+		//runFromXML("validation//simpleSI_params.xml");
+		//repCounter = 0;
+		//runFromXML("validation//simpleSIR_params.xml");
+		
 		repCounter = 0;
-		runFromXML("validation//simpleSI_params.xml");
+		runFromXML("validation//ONE_DEME_SIR_params.xml");
+		
 		repCounter = 0;
-		runFromXML("validation//simpleSIR_params.xml");
+		runFromXML("validation//ONE_DEME_SEIR_params.xml");
+		
+		repCounter = 0;
+		runFromXML("validation//TWO_DEME_SIR_params.xml");
+		
+		repCounter = 0;
+		runFromXML("validation//RANDOM_NETWORK_params.xml");
 	}
 	
 	static void runFromXML(String xmlName) {
+		
+		System.out.println("-----------------------------");
+		System.out.println("* Reading parameters from "+xmlName);
 		readParametersFromXML(xmlName);
+		
+		long t0 = System.currentTimeMillis();
 		
 		for (int i = 0; i < nreps; i++) {
 
@@ -434,6 +456,10 @@ public class DiscreteSpatialPhyloSimulator {
 			System.out.println("* This replicate took = "+(t2-t1)+" milli seconds *");
 			
 		}
+		
+		long t3 = System.currentTimeMillis();
+		System.out.println("* Average time per run = "+(double)(t3-t0)/(double)nreps+" milliseconds *" );
+		System.out.println("* Total time = "+(t3-t0)+ "milliseconds *");
 		
 	}
 	

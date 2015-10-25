@@ -1,0 +1,25 @@
+<DSPS>
+<General>
+	<parameter id="Seed" value="123457"/>
+	<parameter id="Path" value="validation//"/>
+	<parameter id="Rootname" value="RANDOM_1000"/>
+	<parameter id="Nreps" value="10"/>
+	<parameter id="Tauleap" value="0.0"/>
+</General>
+<Sampler>
+	<parameter id="SamplerType" value="individualBasedModel.JustBeforeRecoverySampler"/>
+	<parameter id="justBefore" value="1.0E-16"/>
+</Sampler>
+<PopulationStructure>
+	<parameter id="NumberOfDemes" value="1000"/>
+	<parameter id="NetworkType" value="RANDOM"/>
+	<parameter id="Directed" value="FALSE"/>
+	<parameter id="ProbabilityConnect" value="0.1"/>
+	<parameter id="ModelType" value="SIR"/>
+	<parameter id="InfectionParameters" value="1,0.1"/>
+	<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+	<parameter id="NumberOfHostsPerDeme" value="1"/>
+	<parameter id="ProbabilityInfectionAnyOtherDeme" value="1.0"/>
+	<parameter id="ReportSummary" value="TRUE"/>
+</PopulationStructure>
+</DSPS>

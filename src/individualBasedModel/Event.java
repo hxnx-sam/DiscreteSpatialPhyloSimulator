@@ -206,9 +206,11 @@ public class Event implements Comparable<Event> {
 	 * returns the Deme of the fromHost
 	 * @return
 	 */
+	/*
 	public Deme getResponsibleDeme() {
 		return fromHost.myDeme;
 	}
+	*/
 	
 	/**
 	 * returns the Deme of the toHost

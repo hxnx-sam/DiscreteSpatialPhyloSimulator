@@ -5,12 +5,14 @@ package individualBasedModel;
  * @author Samantha Lycett
  * @created 24 Sept 2013
  * @version 27 Sept 2013
- * @version 3 June 2014 - include birth and death
+ * @version 3  June 2014 - include birth and death
+ * @version 31 Dec 2014  - splitting out the infect self and infect other deme hazards
  */
 public class Hazard {
 
 	Deme   myDeme;
 	double exposedToInfectedHazard 	= 0;
+	double infectSelfHazard			= 0;			// 31 dec 2014
 	double infectOtherHazard 		= 0;
 	double recoveryHazard			= 0;
 	double migrationHazard			= 0;
@@ -47,6 +49,13 @@ public class Hazard {
 	 */
 	public double getInfectOtherHazard() {
 		return infectOtherHazard;
+	}
+	
+	/**
+	 * @return the infectSelfHazard
+	 */
+	public double getInfectSelfHazard() {
+		return infectSelfHazard;
 	}
 
 	/**
@@ -93,6 +102,13 @@ public class Hazard {
 	}
 
 	/**
+	 * @param infectSelfHazard the infectSelfHazard to set
+	 */
+	public void setInfectSelfHazard(double infectSelfHazard) {
+		this.infectSelfHazard = infectSelfHazard;
+	}
+	
+	/**
 	 * @param recoveryHazard the recoveryHazard to set
 	 */
 	public void setRecoveryHazard(double recoveryHazard) {
@@ -115,7 +131,8 @@ public class Hazard {
 	
 	public double getTotalHazard() {
 		if (totalHazard == -1) {
-			totalHazard = exposedToInfectedHazard + infectOtherHazard + recoveryHazard + migrationHazard + birthHazard + deathHazard;
+			//totalHazard = exposedToInfectedHazard + infectOtherHazard + recoveryHazard + migrationHazard + birthHazard + deathHazard;
+			totalHazard = exposedToInfectedHazard + infectSelfHazard + infectOtherHazard + recoveryHazard + migrationHazard + birthHazard + deathHazard;
 		}
 		return totalHazard;
 	}

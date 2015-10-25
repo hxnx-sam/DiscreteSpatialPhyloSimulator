@@ -13,7 +13,7 @@ import java.util.List;
  * class to write specific network shape configuration xmls, e.g. FULL, RANDOM, LINE, STAR etc
  * @author slycett
  * @version 29 Dec 2014
- *
+ * @version 23 Mar 2015
  */
 public class WriteNetworkShapeConfigurationXML implements ConfigurationXMLInterface {
 
@@ -35,6 +35,7 @@ public class WriteNetworkShapeConfigurationXML implements ConfigurationXMLInterf
 	String			dirType			= "FALSE";
 	int				numberOfDemes	= 100;
 	int				hostsInDeme		= 1;
+	double			pinfectother	= 1;
 	
 	ModelType		modelType		= ModelType.SIR;
 	String[]		infectionParams = {"InfectionParameters", "0.1", "0.05"};
@@ -120,6 +121,10 @@ public class WriteNetworkShapeConfigurationXML implements ConfigurationXMLInterf
 		this.probConnect = pc;
 	}
 	
+	public void setProbabilityInfectOtherDeme(double pd) {
+		this.pinfectother = pd;
+	}
+	
 	//////////////////////////////////////////////////////////////////////////////////
 	
 	@Override
@@ -196,6 +201,8 @@ public class WriteNetworkShapeConfigurationXML implements ConfigurationXMLInterf
 		populationParams.add( infectionParams );
 		populationParams.add(new String[]{ "DemeType", demeType } );
 		populationParams.add(new String[]{ "NumberOfHostsPerDeme", ""+hostsInDeme});
+		populationParams.add(new String[]{ "ProbabilityInfectionAnyOtherDeme", ""+pinfectother});
+		
 		populationParams.add(new String[]{ "ReportSummary", reportSummary});
 		
 		logFile.write("<PopulationStructure>");

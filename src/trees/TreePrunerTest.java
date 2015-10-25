@@ -1,6 +1,6 @@
 package trees;
 
-import static org.junit.Assert.*;
+//import static org.junit.Assert.*;
 import individualBasedModel.Deme;
 import individualBasedModel.DemeType;
 import individualBasedModel.Event;

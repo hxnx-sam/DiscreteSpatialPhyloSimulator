@@ -3,6 +3,8 @@ package individualBasedModel;
 import io.Parameter;
 //import networks.NetworkNode;
 
+
+import java.io.File;
 import java.util.*;
 
 import math.Distributions;
@@ -23,9 +25,11 @@ import math.Distributions;
  * @version 3  Oct  2013 - actually changed mind about NetworkNode; use use networks package to generate connectivity patterns and integrate though population
  * @version 11 Oct  2013 - hack for network
  * @version 11 Nov  2013 - changed default for demeType to INFECTION_OVER_NETWORK - this ensures that the cumProbBetweenDemes is initialised properly
- * @version 3 June 2014  - birth and death (pop turnover)
+ * @version 3  June 2014 - birth and death (pop turnover)
  * @version 20 July 2014 - added ability to set multiple index cases as any host in any deme
- * @version 29 Dec 2014 - added "NeighbourLinkParameters" as synonym of MigrationParameters
+ * @version 29 Dec  2014 - added "NeighbourLinkParameters" as synonym of MigrationParameters
+ * @version 31 Dec  2014 - modification to hazards 
+ * @version 23 Mar  2015 - problems with dummy hosts
  */
 //public class Deme implements NetworkNode {
 public class Deme {
@@ -57,27 +61,30 @@ public class Deme {
 	protected long 				uid;
 	
 	// parameters for between demes
-	protected DemeType			demeType	= DemeType.INFECTION_OVER_NETWORK;	    //DemeType.MIGRATION_OF_INFECTEDS;		// migration
-																					// NETWORK if allow direct cross deme infection
-	protected List<Deme>		neighbours	= null;
-	private	  String[]			neighbourDemeNames  = null;							// use if setting from parameters xml file
+	protected DemeType			demeType			= DemeType.INFECTION_OVER_NETWORK;	    //DemeType.MIGRATION_OF_INFECTEDS;		// migration
+																							// NETWORK if allow direct cross deme infection
+	protected List<Deme>		neighbours			= null;
+	private	  String[]			neighbourDemeNames  = null;									// use if setting from parameters xml file
 	protected double[]			migrationParameters = null;
-	protected double[]			cumProbBetweenDemes = null;							// only not null if NETWORK
+	protected double[]			cumProbBetweenDemes = null;									// only not null if NETWORK
+	protected double			bii					= 1;									// probability of infecting within self - is less than 1 if INFECTION_OVER_NETWORK
 	protected double			totalMigration 		= 0;
 	protected double			birthRate		    = 0;
 	protected double			deathRate			= 0;
 	
 	
 	// parameters for individuals within deme
-	protected ModelType			modelType 	= ModelType.SIR;						// SIR or SEIR
+	protected ModelType			modelType 	= ModelType.SIR;								// SIR or SEIR
 	protected double[]			infectionParameters;
 	
-	protected int numberOfHosts				= 10;									// would normally have numberOfHosts = 1 if NETWORK
+	protected int numberOfHosts				= 10;											// would normally have numberOfHosts = 1 if NETWORK
 	protected List<Host> hosts;
+	//protected Host dummyHost;
 	
-	// experimental 6 sept 2013
 	protected int[] hostStates = new int[5];
 	
+	// not sure need this, 24 oct 2015
+	//protected boolean onlyOnePerDeme 		= false;										// special case for network, numberOfHosts = 1 always
 
 	//////////////////////////////////
 	// constructors
@@ -89,6 +96,9 @@ public class Deme {
 		for (int i = 0; i < hostStates.length; i++) {
 			hostStates[i] = 0;
 		}
+		
+		// 23 mar 2015
+		//dummyHost = new Host(this,"Dummy");
 	}
 	
 	public Deme(String name) {
@@ -98,6 +108,9 @@ public class Deme {
 		for (int i = 0; i < hostStates.length; i++) {
 			hostStates[i] = 0;
 		}
+		
+		// 23 mar 2015
+		//dummyHost = new Host(this,"Dummy");
 	}
 	
 	//////////////////////////////////
@@ -128,7 +141,16 @@ public class Deme {
 	public void setMigrationParameters(double[] migrationParameters) {
 		this.migrationParameters = migrationParameters;
 		
+		totalMigration = 0;
+		for (int i = 0; i < migrationParameters.length; i++) {
+			totalMigration += migrationParameters[i];
+		}
+		
 		if (demeType == DemeType.INFECTION_OVER_NETWORK) {
+			// the migration parameters are actually pij for infection to other demes
+			// they should sum to < 1 
+			// the remainder 1 - sum(pij) = bii = probability of infecting within own deme
+			
 			cumProbBetweenDemes = new double[migrationParameters.length];
 			
 			cumProbBetweenDemes[0] = migrationParameters[0];
@@ -136,23 +158,34 @@ public class Deme {
 				cumProbBetweenDemes[i] = cumProbBetweenDemes[i-1] + migrationParameters[i];
 			}
 			
-			totalMigration 		= 0;				// this is a component of the migration hazard, but if INFECTION_OVER_NETWORK, then individuals dont actually move
+			bii					= 1 - cumProbBetweenDemes[migrationParameters.length-1];
+			//totalMigration 		= 0;				// this is a component of the migration hazard, but if INFECTION_OVER_NETWORK, then individuals dont actually move
 		} else {
 			// demeType = MIGRATION_OF_INFECTEDS
-			
+		
+			/*
 			totalMigration = 0;
 			for (int i = 0; i < migrationParameters.length; i++) {
 				totalMigration += migrationParameters[i];
 			}
+			*/
 			
 			// 26 Feb 2014 - think this is necessary after all because of getAnotherDeme
 			// divided by total migration to make this relative preference between demes (not including self)
+			
+			// 1 Jan 2015 - dont think this is needed now at all
+			/*
 			cumProbBetweenDemes = new double[migrationParameters.length];
 						
 			cumProbBetweenDemes[0] = migrationParameters[0]/totalMigration;
 			for (int i = 1; i < migrationParameters.length; i++) {
 					cumProbBetweenDemes[i] = cumProbBetweenDemes[i-1] + migrationParameters[i]/totalMigration;
 			}
+			*/
+			
+			// 1 Jan 2015
+			// when MIGRATION_OF_INFECTEDS, infections only occurr within demes
+			bii = 1;
 			
 		}
 	}
@@ -389,6 +422,7 @@ public class Deme {
 	 * @param IS
 	 * @return
 	 */
+	
 	protected Host getHost(InfectionState IS) {
 		List<Host> selectedHosts = new ArrayList<Host>();
 		for (Host h : hosts) {
@@ -397,14 +431,24 @@ public class Deme {
 			}
 		}
 		
-		int choice = Distributions.randomInt(selectedHosts.size());
-		return selectedHosts.get(choice);
+		// 23 march 2015
+		if (selectedHosts.size() > 1) {
+			int choice = Distributions.randomInt(selectedHosts.size());
+			return selectedHosts.get(choice);
+		} else if (selectedHosts.size() == 1) {
+			return selectedHosts.get(0);
+		} else {
+			return null;
+		}
 	}
 	
 	
+	
+	/*
 	protected Deme getAnotherDeme() {
 		// TO DO - decide how to choose between self and contacts
 		// System.out.println("Deme.getHost - NOT IMPLEMENTED FOR NETWORK YET");
+		
 		
 		// migration parameters are probability of infection between demes
 		// choose between demes
@@ -413,6 +457,28 @@ public class Deme {
 		
 		return (neighbours.get(choice));
 	}
+	*/
+	
+	
+	/**
+	 * returns any host apart from the input host within this deme,
+	 * if there is only one (or zero) hosts in the deme then returns null
+	 * 31 dec 2014
+	 * @param notThisHost
+	 * @return
+	 */
+	protected Host getAnotherHostFromThisDeme(Host notThisHost) {
+		Host anotherHost = null;
+		if (hosts.size() > 1) {
+			int pos = hosts.indexOf(notThisHost);
+			int j 	= Distributions.randomInt(hosts.size()-1);
+			if (j >= pos) {
+				j = j+1;
+			}
+			anotherHost = hosts.get(j);
+		}
+		return anotherHost;
+	}
 	
 	/**
 	 * returns any host apart from the input host
@@ -420,20 +486,15 @@ public class Deme {
 	 * @param notThisHost
 	 * @return
 	 */
+	
 	protected Host getHost(Host notThisHost) {
 		
 		Host anotherHost = null;
 		if ( (demeType == DemeType.MIGRATION_OF_INFECTEDS) || (neighbours == null) || (neighbours.size() == 0) ) {
-			if ( containsHost(notThisHost) && (hosts.size() > 1) ) {
-				anotherHost = getHost();
-				while (anotherHost.equals(notThisHost)) {
-					anotherHost = getHost();
-				}
-			}
+			
+			anotherHost = getAnotherHostFromThisDeme(notThisHost);
 			
 		} else if (demeType == DemeType.INFECTION_OVER_NETWORK ) {
-			// TO DO - decide how to choose between self and contacts
-			// System.out.println("Deme.getHost - NOT IMPLEMENTED FOR NETWORK YET");
 			
 			// migration parameters are probability of infection between demes
 			// choose between demes
@@ -456,12 +517,7 @@ public class Deme {
 				
 			} else {
 				// if own deme
-				if ( containsHost(notThisHost) && (hosts.size() > 1) ) {
-					anotherHost = getHost();
-					while (anotherHost.equals(notThisHost)) {
-						anotherHost = getHost();
-					}
-				}
+				anotherHost = getAnotherHostFromThisDeme(notThisHost);
 				
 			}
 		}
@@ -469,6 +525,7 @@ public class Deme {
 		return anotherHost;
 		
 	}
+	
 	
 	
 	public List<Host> getHosts() {
@@ -584,10 +641,13 @@ public class Deme {
 					// expect a single number as all neighbouring demes treated equally
 					// divide this by number of neighbours
 					double probBetween = Double.parseDouble(p.getValue());
-					int    numNeighb   = neighbours.size();
-					if (numNeighb < 1) {
+					// 24 oct 2015
+					if ( (neighbours == null) || (neighbours.size() < 1)) {
+					//if ( (neighbours == null) || (neighbours.size() <= 1)) {
+					//if (numNeighb < 1) {
 						System.out.println("Deme.setDemeParameters - WARNING cant set probability infection because no neighbours to infect");
 					} else {
+						int    numNeighb   = neighbours.size();
 						double p_per_neighb = probBetween/(double)numNeighb;
 						double[] migrationParameters = new double[numNeighb];
 						for (int i = 0; i < numNeighb; i++) {
@@ -641,7 +701,7 @@ public class Deme {
 		} else {
 			//System.out.println("Deme.setNeighbours - WARNING cant set neighbouring demes from the the population because havent set neighbourDemeNames");
 			if ( (neighbours != null) && (neighbours.size() > 0) ) {
-				System.out.println("Deme.setNeighbours - setting neighbour names from already set demes");
+				//System.out.println("Deme.setNeighbours - setting neighbour names from already set demes");
 				neighbourDemeNames = new String[neighbours.size()];
 				for (int i = 0; i < neighbours.size(); i++) {
 					neighbourDemeNames[i] = neighbours.get(i).getName();
@@ -650,9 +710,25 @@ public class Deme {
 		}
 	}
 	
+	/**
+	 * output a string of the neighbours edge list useful for random networks
+	 * @return
+	 */
+	public String getNeighbourEdgeList() {
+		String delim = "\t";
+		String eol	 = File.pathSeparator;
+		StringBuffer txt = new StringBuffer();
+		for (int i = 0; i < neighbours.size(); i++) {
+			Deme n = neighbours.get(i);
+			txt.append(this.name + delim + n.name + delim + migrationParameters[i] + eol);
+		}
+		
+		return txt.toString();
+	}
+	
 	
 	////////////////////////////////////////////////////////////////////////////////////
-	// EVENT GENERATORS - EXPERIMENTAL
+	// EVENT GENERATORS 
 	////////////////////////////////////////////////////////////////////////////////////
 	
 	// experimental 6 Sept 2013
@@ -835,10 +911,12 @@ public class Deme {
 		}
 	}
 	
+	/*
 	private boolean hasEvent() {
 		// how many of my hosts are active ?
 		return (( numberExposed() + numberInfected() ) > 0 );
 	}
+	*/
 	
 	private double generateExposedToInfectedHazard() {
 		double h = 0;
@@ -848,15 +926,98 @@ public class Deme {
 		return h;
 	}
 	
-	private double generateInfectOtherHazard() {
+
+	/**
+	 * uses force of infection = b*S*I
+	 * note this is not divided by N yet
+	 * note you need to select toHost as susceptible in event generation
+	 * @return
+	 */
+	private double generateInfectSelfHazard() {
 		double h = 0;
+		
+		
+		if (numberOfHosts > 1) {
+		
+			if ((modelType == ModelType.SIR) || (modelType == ModelType.SI))  {
+				//h = infectionParameters[0]*(double)numberInfected();
+			
+				// 31 dec 2014	- b*S*I/N
+				h = infectionParameters[0] * (double)numberInfected() * (double)numberSusceptible();// / (double)numberOfHosts;
+			
+			} else if (modelType == ModelType.SEIR) {
+				//h = infectionParameters[1]*(double)numberInfected();	
+			
+				// dE ~ b*S*I, this is 2nd rate - 30 Dec 2014 
+				// 31 dec 2014 - b*S*I		
+				h = infectionParameters[1] * (double)numberInfected() * (double)numberSusceptible();// / (double)numberOfHosts;
+			
+			} else {
+				System.out.println("Deme.generateInfectionHazard: WARNING unknown modelType");
+			}
+			
+			// now x by bii
+			// bii = 1 if MIGRATION_OF_INFECTEDS and will be less than 1 for INFECTION_OVER_NETWORK
+			h = h * bii;
+		
+		}
+		
+		return h;
+		
+	}
+	
+	/**
+	 * generates b * I(i) * S(j) hazard 
+	 * note this is not divided by N yet
+	 * note you need to select toHost as susceptible in event generation
+	 * @param neighbourChoice
+	 * @return
+	 */
+	private double generateInfectOtherHazard(int neighbourChoice) {
+		
+		double h = 0;
+		
+		// 1 jan 2015
+		//if ( (demeType == DemeType.MIGRATION_OF_INFECTEDS) || (neighbours == null) || (neighbours.size() == 0) ) {
+			// there are no neighbours, so cannot infect another deme
+			// do nothing
+		//	h = 0;
+			
+		//} else {
+			
+			double numberSusceptibleInNeighbour = (double)neighbours.get(neighbourChoice).numberSusceptible();
+			
+			if ((modelType == ModelType.SIR) || (modelType == ModelType.SI))  {
+				h = infectionParameters[0] * (double)numberInfected() * numberSusceptibleInNeighbour;
+				
+			} else if (modelType == ModelType.SEIR) {
+				h = infectionParameters[1] * (double)numberInfected() * numberSusceptibleInNeighbour;	
+				// dE ~ b*S*I, this is 2nd rate - 30 Dec 2014 
+				
+			} else {
+				System.out.println("Deme.generateInfectionHazard: WARNING unknown modelType");
+			}
+			
+			// now x by pij, which is migrationParameters[j]
+			h = h * migrationParameters[neighbourChoice];
+			
+		//}
+		
+		
+		
+		// original code, for when not specifying toHost state when choosing in generate events
+		/*
 		if ((modelType == ModelType.SIR) || (modelType == ModelType.SI))  {
 			h = infectionParameters[0]*(double)numberInfected();
+			
 		} else if (modelType == ModelType.SEIR) {
-			h = infectionParameters[1]*(double)numberInfected();	// dE ~ b*S*I, this is 2nd rate - 30 Dec 2014 		  
+			h = infectionParameters[1]*(double)numberInfected();	// dE ~ b*S*I, this is 2nd rate - 30 Dec 2014 
+			
 		} else {
 			System.out.println("Deme.generateInfectionHazard: WARNING unknown modelType");
 		}
+		*/
+		
 		return h;
 	}
 	
@@ -865,15 +1026,21 @@ public class Deme {
 		if (modelType == ModelType.SI) {
 			// do nothing
 		} else if (modelType == ModelType.SIR) {
-			h = infectionParameters[1]*(double)numberInfected();
+			h = infectionParameters[1]*(double)numberInfected();			// dR ~ y*I
 		} else if (modelType == ModelType.SEIR) {
-			h = infectionParameters[2]*(double)numberInfected();
+			h = infectionParameters[2]*(double)numberInfected();			// dR ~ y*I
 		} else {
 			System.out.println("Deme.generateInfectionHazard: WARNING unknown modelType");
 		}
 		return h;
 	}
 	
+	/** 
+	 * TO DO - NOT SURE ABOUT THE SCALING BY N OR BY DENOMINATORN ??
+	 * returns 0 if not MIGRATION_OF_INFECTIONS
+	 * @return
+	 */
+	/*
 	private double generateMigrationHazard() {
 		double h = 0;
 		if (demeType.equals(DemeType.MIGRATION_OF_INFECTEDS)) {
@@ -882,13 +1049,14 @@ public class Deme {
 			//}
 			
 			// this is migration of any host within the deme (not just the infecteds)
-			// h = (double)totalMigration * (double)hosts.size();				// migration to any deme (but this one) x hosts
+			h = (double)totalMigration * (double)hosts.size();				// migration to any deme (but this one) x hosts
 			
 			// migration of infecteds only
-			h = (double)totalMigration * (double)numberInfected();			// migration to any deme (but this one) x infecteds
+			//h = (double)totalMigration * (double)numberInfected();			// migration to any deme (but this one) x infecteds
 		}
 		return h;
 	}
+	*/
 	
 	private double generateBirthHazard() {
 		double h = 0;
@@ -910,12 +1078,66 @@ public class Deme {
 	
 	Hazard generateHazards() {
 		Hazard h = new Hazard(this);
+
 		h.setExposedToInfectedHazard( generateExposedToInfectedHazard() );
-		h.setInfectOtherHazard( generateInfectOtherHazard() );
-		h.setMigrationHazard( generateMigrationHazard() );
+		
+		// 11 Jan 2015
+		if ((neighbours == null) || (neighbours.size() == 0)) {
+			// if no neighbours then only calculate infect self hazard and normalised by number of hosts
+			
+			// calculate infect self hazard (bii*S*I)
+			// 1 Jan 2015
+			double infectSelfHazard = generateInfectSelfHazard();
+			
+			infectSelfHazard 	= infectSelfHazard/(double)numberOfHosts;
+			h.setInfectSelfHazard(infectSelfHazard);
+			
+		} else if (demeType == DemeType.INFECTION_OVER_NETWORK) {
+			// there are some neighbours to infect as well as self
+			
+			// calculate infect self hazard (bii*S*I)
+			// 1 Jan 2015
+			double infectSelfHazard = generateInfectSelfHazard();
+			
+			double denominatorN 	 = bii * numberOfHosts;
+			double infectOtherHazard = 0;
+			for (int j = 0; j < neighbours.size(); j++) {
+					double pijN 		= migrationParameters[j] * (double)neighbours.get(j).numberOfHosts;
+					denominatorN 		+= pijN;
+					infectOtherHazard 	+= generateInfectOtherHazard(j);
+			}
+						
+			// normalise self hazard by denominatorN
+			infectSelfHazard		= infectSelfHazard / denominatorN;
+			h.setInfectSelfHazard( infectSelfHazard );
+						
+			// normalise other hazard by denominatorN
+			infectOtherHazard		= infectOtherHazard / denominatorN;
+			h.setInfectOtherHazard( infectOtherHazard );
+			
+		} else if (demeType == DemeType.MIGRATION_OF_INFECTEDS) {
+			// calculate infection of self deme and migration between demes
+			
+			// calculate infect self hazard
+			// 1 Jan 2015
+			double infectSelfHazard = generateInfectSelfHazard();
+			
+			// normalised infect self by number in own deme
+			infectSelfHazard		= infectSelfHazard / (double)numberOfHosts;
+			h.setInfectSelfHazard( infectSelfHazard );
+						
+			// calculate migration between demes, this can be of an individual in any state
+			// this is migration from me
+			// (p241 Keeling & Rohani)
+			h.setMigrationHazard( (double)totalMigration * (double)numberOfHosts );
+		
+		}
+		
 		h.setRecoveryHazard( generateRecoveryHazard() );
+		
 		h.setBirthHazard( generateBirthHazard() );
 		h.setDeathHazard( generateDeathHazard() );
+		
 		h.getTotalHazard();										// calculates total hazard
 		return h;
 	}
@@ -933,12 +1155,10 @@ public class Deme {
 	  double totalWeights = h.getTotalHazard();
 	  if (totalWeights > 0) {
 		
-		//						0								1							2						3						4					5
-		double[] weights 	= {h.getExposedToInfectedHazard(), h.getInfectOtherHazard(), h.getMigrationHazard(), h.getRecoveryHazard(), h.getBirthHazard(), h.getDeathHazard()};
+		//						0								1							2						3						4					5						6
+		double[] weights 	= {h.getExposedToInfectedHazard(), h.getInfectSelfHazard(), h.getInfectOtherHazard(), h.getMigrationHazard(), h.getRecoveryHazard(), h.getBirthHazard(), h.getDeathHazard()};
 		
 		int eventChoice  	= Distributions.chooseWithWeights(weights, totalWeights);
-		//int eventChoice  = Distributions.unNormalisedWeightedChoice(cumRateEvents);
-		//System.out.println("Deme.generateEvent - event choice = "+eventChoice);
 		
 		Event e			 = new Event();
 		
@@ -953,12 +1173,95 @@ public class Deme {
 			}
 			
 		} else if (eventChoice == 1) {
-			// INFECTION
+			// INFECTION with self (own deme)
+			// also, only specify the dummy host at this point, if the event is actually performed then choose a susceptible
+			
 			Host aHost = getInfectedHost();
 			
-			if (aHost != null) {
+			// 23 mar 2015
+			//Host bHost = dummyHost;
+			Host bHost = getHost(InfectionState.SUSCEPTIBLE);
+			
+			/*
+			int infectedHostChoice = -1;
+			if (numberInfected() == 1) {
+				infectedHostChoice = 0;
+			} else if (numberInfected() > 1) {
+				infectedHostChoice 		= Distributions.randomInt( numberInfected() );
+			}
+			
+			int susceptibleHostChoice = -1;
+			if (numberSusceptible() == 1) {
+				susceptibleHostChoice = 0;
+			} else if (numberSusceptible() > 1) {
+				susceptibleHostChoice 	= Distributions.randomInt( numberSusceptible() );
+			}
+			
+			if ( (infectedHostChoice >= 0) && (susceptibleHostChoice >=0)) {
 				
-				Host bHost = getHost(aHost);
+				int infectedCount 		= -1;
+				int susceptibleCount 	= -1;
+				int count				= 0;
+				
+				Host aHost = null;
+				Host bHost = null;
+				
+				while ( (count < hosts.size() ) && ( ( aHost == null) || ( bHost==null) )  ) {
+					Host tempH = hosts.get(count);
+					count++;
+					
+					if (tempH.getState().equals(InfectionState.SUSCEPTIBLE)) {
+						susceptibleCount++;
+						if (susceptibleCount == susceptibleHostChoice) {
+							bHost = tempH;
+						}
+					}
+					
+					if (tempH.getState().equals(InfectionState.INFECTED)) {
+						infectedCount++;
+						if (infectedCount == infectedHostChoice) {
+							aHost = tempH;
+						}
+					}
+					
+				}
+				*/
+				
+				if ((aHost != null) && (bHost != null)) {
+					if (modelType.equals(ModelType.SEIR)) {
+						e.setExposureEvent(aHost, bHost, currentTime, actionTime);				
+					} else {
+						e.setInfectionEvent(aHost, bHost, currentTime, actionTime);
+					}
+				} else {
+					e = null;
+				}
+				
+			//} else {
+			//	e = null;
+			//}
+			
+			
+		} else if (eventChoice == 2) {
+			// CROSS DEME INFECTION
+			// cross deme infection only, within own deme is covered above
+			
+			Host aHost 			= getInfectedHost();
+			
+			if (aHost != null) {
+			
+				// also, only specify the dummy host at this point, if the event is actually performed then choose a susceptible
+				// int neighbourChoice = Distributions.chooseWithWeights(migrationParameters, totalMigration );
+				// Host bHost			= neighbours.get(neighbourChoice).dummyHost;
+			
+				
+				//Host bHost = getHost(aHost);
+				//Host bHost = getAnotherDeme().getHost();		// 31 dec 2014
+				
+				// supposed to find susceptible host here, but what if there isnt one ? esp if numberOfHosts = 1
+				// problem for numberOfHosts = 1 because dont know which of neighbs are sus here and should only be choosing from these
+				int neighbourChoice = Distributions.chooseWithWeights(migrationParameters, totalMigration );
+				Host bHost			= neighbours.get(neighbourChoice).getHost(InfectionState.SUSCEPTIBLE);
 			
 				if (bHost != null) {
 				
@@ -970,20 +1273,23 @@ public class Deme {
 					
 				} else {
 					e = null;
+					//System.out.println("Deme.generateEvent couldnot select susceptible host in neighbour choice deme");
 				}
 			} else {
 				e = null;
 			}
 				
-		} else if (eventChoice == 2) {
-			// MIGRATION of INFECTEDS
+		} else if (eventChoice == 3) {
+			// MIGRATION of INFECTEDS (this should never be choosen if INFECTION_OVER_NETWORK)
 			
 			// this is migration of any host
-			// Host aHost  = getHost();
+			Host aHost  			= getHost();
+			int neighbourChoice		= Distributions.chooseWithWeights(migrationParameters, totalMigration);
+			Deme toDeme				= neighbours.get(neighbourChoice);
 			
 			// this is migration of infecteds only
-			Host aHost  = getInfectedHost();
-			Deme toDeme = getAnotherDeme();
+			//Host aHost  = getInfectedHost();
+			//Deme toDeme = getAnotherDeme();
 			
 			if ((aHost != null) && (toDeme != null) ) {
 				e.setMigrationEvent(aHost, this, toDeme, currentTime, actionTime);
@@ -991,7 +1297,7 @@ public class Deme {
 				e = null;
 			}
 			
-		} else if (eventChoice == 3) {
+		} else if (eventChoice == 4) {
 			// RECOVERY
 			if ( modelType.equals(ModelType.SI) ) {
 				e = null;
@@ -1010,14 +1316,14 @@ public class Deme {
 			
 			}
 			
-		} else if (eventChoice == 4) {
+		} else if (eventChoice == 5) {
 			// BIRTH
 			Host aHost 		= new Host(this);
 			aHost.setState(InfectionState.SUSCEPTIBLE);
 			
 			e.setBirthEvent(aHost, this, currentTime, actionTime);
 			
-		} else if (eventChoice == 5) {
+		} else if (eventChoice == 6) {
 			// DEATH
 			// death can be of any host
 			Host aHost		= getHost();
@@ -1041,16 +1347,25 @@ public class Deme {
 	
 	
 	/**
+	 * THIS IS OLD; it assumes that the responsible deme is the from deme
 	 * Deme performs event, and also updates the host state count
 	 * @param e
 	 */
-	public void performEvent(Event e) {
+	public void performEvent_old(Event e) {
 		
 		e.setSuccess(false);			// event success defaults to false
 		//Event newEvent = null;
 		
 		Host toHost 		 = e.getToHost();		// this could be in this deme, or another deme
 		Deme toDeme			 = e.getToDeme();		// may or may not be this deme
+		
+		
+		// 11 Jan 2015 this is in Population
+		//if ( toHost.equals(toDeme.dummyHost) ) {
+		//	// this means that the host has not been set so far, and it should be a susceptible host
+		//	toHost = toDeme.getHost(InfectionState.SUSCEPTIBLE);
+		//}
+		
 		InfectionState state = toHost.getState();
 		
 		if ( e.getFromDeme().equals(this)  ) {	
@@ -1071,6 +1386,7 @@ public class Deme {
 			} else if ( e.getType() == EventType.INFECTION )  {
 				
 				if ((state == InfectionState.EXPOSED) && (modelType == ModelType.SEIR)) {
+					
 					// event possible
 					toHost.setState(InfectionState.INFECTED);
 					e.setSuccess(true);
@@ -1081,7 +1397,7 @@ public class Deme {
 					
 				} else {
 					// SIR, SI
-					if ( state == InfectionState.SUSCEPTIBLE)  {
+					if ( state == InfectionState.SUSCEPTIBLE )  {
 						// event possible
 						toHost.setState(InfectionState.INFECTED);
 						e.setSuccess(true);
@@ -1108,6 +1424,129 @@ public class Deme {
 					
 					// remove from this
 					removeHost(toHost);
+			
+					toHost.myDeme = toDeme;
+					
+					// add to toDeme
+					toDeme.addHost(toHost);
+					
+					e.setSuccess(true);
+				//} else {
+				//	System.out.println("Deme.performEvent: WARNING just tried to action inappropriate MIGRATION event (wrong Deme)");
+				//}
+				
+			} else if ( e.getType() == EventType.BIRTH ) {
+				
+
+				// add the new host to this deme
+				if (!hosts.contains(toHost)) {
+					addHost(toHost);
+					e.setSuccess(true);
+				} else {
+					e.setSuccess(false);
+				}
+				
+				
+			} else if ( e.getType() == EventType.DEATH ) {
+				
+				// remove the host from this deme
+				if (hosts.contains(toHost)) {
+					removeHost(toHost);
+					e.setSuccess(true);
+				} else {
+					e.setSuccess(false);
+				}
+				
+				
+			} else {
+				System.out.println("Deme.performEvent: WARNING cant do event "+e.getType());
+			}
+			
+			
+		} else {
+			System.out.println("Deme.performEvent: WARNING just tried to action inappropriate event (wrong Deme)");
+			
+		}
+		
+		//return newEvent;
+		
+	}
+	
+	
+	/**
+	 * Deme performs event, and also updates the host state count
+	 * @param e
+	 */
+	public void performEvent(Event e) {
+		
+		e.setSuccess(false);			// event success defaults to false
+		//Event newEvent = null;
+		
+		Deme fromDeme		 = e.getFromDeme();		// might not be from this deme
+		//Host fromHost		 = e.getFromHost();		// might not be from this deme
+		
+		Host toHost 		 = e.getToHost();		// in this deme
+		Deme toDeme			 = e.getToDeme();		// in this deme
+		
+		
+		InfectionState state = toHost.getState();
+		
+		if ( e.getToDeme().equals(this)  ) {	
+			
+			if ( e.getType() == EventType.EXPOSURE ) {
+				
+				if ((state == InfectionState.SUSCEPTIBLE ) && (modelType == ModelType.SEIR) ) {
+					// event possible
+					toHost.setState(InfectionState.EXPOSED);
+					e.setSuccess(true);
+					
+					// S -> E
+					decrementS();
+					incrementE();
+					
+				} 
+				
+			} else if ( e.getType() == EventType.INFECTION )  {
+				
+				if ((state == InfectionState.EXPOSED) && (modelType == ModelType.SEIR)) {
+					
+					// event possible
+					toHost.setState(InfectionState.INFECTED);
+					e.setSuccess(true);
+					
+					// E -> I
+					decrementE();
+					incrementI();
+					
+				} else {
+					// SIR, SI
+					if ( state == InfectionState.SUSCEPTIBLE )  {
+						// event possible
+						toHost.setState(InfectionState.INFECTED);
+						e.setSuccess(true);
+					
+						// S -> I
+						decrementS();
+						incrementI();
+					}
+				}
+				
+			} else if ( e.getType() == EventType.RECOVERY ) {
+				if (state == InfectionState.INFECTED) {
+					toHost.setState( InfectionState.RECOVERED );
+					e.setSuccess(true);
+					
+					// I -> R
+					decrementI();
+					incrementR();
+				}
+				
+			} else if ( e.getType() == EventType.MIGRATION ) {
+					// event possible
+					// change demes
+					
+					// remove from fromDeme
+					fromDeme.removeHost(toHost);
 			
 					toHost.myDeme = toDeme;
 					
@@ -1199,6 +1638,16 @@ public class Deme {
 		
 		return line;
 	}
+	
+	// 24 oct 2015
+	String printNeighbours() {
+		StringBuffer txt = new StringBuffer();
+		for (Deme neighb : neighbours) {
+			txt.append(this.name+","+neighb.name+"\n");
+		}
+		return txt.toString();
+	}
+	
 	
 	////////////////////////////////////////////////////////////////////////////////////
 	// implementation of NetworkNode interface

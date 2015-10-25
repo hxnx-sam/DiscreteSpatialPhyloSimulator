@@ -14,6 +14,7 @@ import io.*;
  * @version 11 July 2014 - facility to add a number of identical demes (NumberOfDemes), useful for RANDOM network models
  * @version 20 July 2014 - added ability to set multiple index cases as any host in any deme
  * @version 22 July 2014
+ * @version 24 Oct 2015
  */
 public class Population {
 
@@ -337,13 +338,23 @@ public class Population {
 	 * all demes connected to all demes (two connectivity)
 	 */
 	private void setFullConnectivity() {
+		// 24 Oct 2015
+		System.out.println("Set FULL connectivity between demes");
 		pedge = 1;
 		for (int i = 0; i < (demes.size()-1); i++) {
 			for (int j = (i+1); j < demes.size(); j++) {
+				/*
 				Deme deme1 = demes.get(i);
 				Deme deme2 = demes.get(j);
 				deme1.addNeighbour(deme2);
 				deme2.addNeighbour(deme1);
+				*/
+				demes.get(i).addNeighbour(demes.get(j));
+				demes.get(j).addNeighbour(demes.get(i));
+				
+				System.out.println("Deme "+i+" connected to Deme "+j+" and vice versa");
+				System.out.print(demes.get(i).printNeighbours());
+				System.out.print(demes.get(j).printNeighbours());
 			}
 		}
 	}
@@ -521,7 +532,7 @@ public class Population {
 	}
 	
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// EXPERIMENTAL 24 Sept 2013
+	// 24 Sept 2013
 	// Demes are generating own hazards
 	// Population gets list of all hazards
 	
@@ -530,8 +541,16 @@ public class Population {
 		
 		for (Deme d : demes) {
 			Hazard demeHazard = d.generateHazards();
-			//System.out.println("Hazard: "+demeHazard.getMyDeme()+" "+demeHazard.getTotalHazard());
-			h.add(demeHazard);
+			
+			// 24 oct 2015
+			if (demeHazard.totalHazard > 0) {
+				//System.out.println("Population.allHazards Hazard: "+demeHazard.getMyDeme()+" "+demeHazard.getTotalHazard());
+				h.add(demeHazard);
+			}
+		}
+		
+		if (h.size() == 0) {
+			System.out.println("Population.allHazards no hazards in list");
 		}
 		
 		return h;
@@ -552,6 +571,7 @@ public class Population {
 			System.out.println("Population.generateEvent: no event");
 		}
 		*/
+		
 		
 		return e;
 	}
@@ -578,7 +598,17 @@ public class Population {
 			//Host actor 		= e.getToHost();
 			//actor.performEvent(e);
 			
-			Deme responsibleDeme = e.getResponsibleDeme();
+			// 11 Jan 2015
+			/*
+			Host toHost			= e.getToHost();
+			if ( toHost.equals(e.getToDeme().dummyHost) ) {
+				// this means that the host has not been set so far, and it should be a susceptible host
+				toHost = e.getToDeme().getHost(InfectionState.SUSCEPTIBLE);
+			}
+			*/
+			
+			//Deme responsibleDeme = e.getResponsibleDeme();
+			Deme responsibleDeme = e.getToDeme();
 			responsibleDeme.performEvent(e);
 			
 		}
