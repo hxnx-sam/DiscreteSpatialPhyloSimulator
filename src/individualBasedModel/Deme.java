@@ -315,7 +315,8 @@ public class Deme {
 		}
 		
 		if (hosts.contains(host)) {
-			host.myDeme = null;
+			//28 oct 2015
+			//host.myDeme = null;		// actually want hosts to remember the last deme they are in until they are updated, e.g. for DEATH
 			hosts.remove(host);
 			
 			countHostStates();

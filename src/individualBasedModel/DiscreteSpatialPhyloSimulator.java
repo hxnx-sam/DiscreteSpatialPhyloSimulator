@@ -28,6 +28,7 @@ import trees.TransmissionNode;
  * @version 23 Mar  2015
  * @version 24 Oct  2015 - checking validations
  * @version 25 Oct  2015 - checking validations
+ * @vesrion 28 Oct  2015 - birth and death are working
  */
 
 public class DiscreteSpatialPhyloSimulator {
@@ -35,7 +36,7 @@ public class DiscreteSpatialPhyloSimulator {
 	//////////////////////////////////////////////////////////////////////////////////
 	// class variables
 	
-	public final static String 				  version 		= "DiscreteSpatialPhyloSimulator - 25 Oct 2015";
+	public final static String 				  version 		= "DiscreteSpatialPhyloSimulator - 28 Oct 2015";
 	protected 	 static List<List<Parameter>> params;		// from configuration XML
 	
 	protected static String		path 	 					= "test//";

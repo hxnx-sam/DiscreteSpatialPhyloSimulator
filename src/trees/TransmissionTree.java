@@ -8,12 +8,13 @@ import individualBasedModel.Event;
 //import individualBasedModel.EventType;
 
 /**
- * class to represent the transmission tree - for outputing to newick
+ * class to represent the transmission tree - for outputting to newick
  * @author Samantha Lycett
  * @created 26 Nov 2012
  * @version 26 Nov 2012
  * @version 17 June 2013 - for DiscreteSpatialPhyloSimulator (not Demes, as in Nov 2012)
  * @version 26 Feb  2014 - correction to sampled nodes
+ * @version 28 Oct  2015 - treat DEATH like a special type of SAMPLING
  */
 public class TransmissionTree {
 
@@ -79,6 +80,28 @@ public class TransmissionTree {
 	}
 	
 	/**
+	 * makes a dead transmission node (no children allowed), but does not add to tree
+	 * @param tn_fromHost
+	 * @param toHost
+	 * @param time
+	 * @return
+	 */
+	DeadNode makeNewDeadNode(TransmissionNode tn_fromHost, Host toHost, double time) {
+		DeadNode dn_toHost = new DeadNode(toHost);
+		dn_toHost.setNodeHeight(time);
+		
+		if (tn_fromHost != null) {
+			dn_toHost.setParent(tn_fromHost);
+			tn_fromHost.addChild(dn_toHost);
+		} else {
+			dn_toHost.setParent(rootNode);
+			rootNode.addChild(dn_toHost);
+		}
+		
+		return (dn_toHost);
+	}
+	
+	/**
 	 * retrieves an existing transmission node from the most recent nodes list
 	 * @param fromHost
 	 * @return
@@ -137,10 +160,53 @@ public class TransmissionTree {
 				System.out.println("TransmissionTree.processEvent - WARNING - Sampling event is not correctly specified");
 			}
 			
-		} else if ((etype == EventType.BIRTH) || (etype == EventType.DEATH)) {
+		//} else if ((etype == EventType.BIRTH) || (etype == EventType.DEATH)) {
+		} else if ( etype == EventType.BIRTH ) {
 			// temp
-			//System.out.println(e.toOutput());
-			// DO NOTHING
+			// System.out.println(e.toOutput());
+			// DO NOTHING for BIRTH
+			
+			// !! 26 oct 2015 - probably want to treat DEATH like RECOVERY with appropriate sampling
+			// i.e. just before recovery sampling also means just before death sampling ?
+			
+		} else if ( etype == EventType.DEATH) {
+			// 28 oct 2015
+			// the death event should be like the sampling event
+			// note only need to record death events in the transmission tree if the individual was infected (or exposed) before they died
+			// if just susceptible, then it is not in the transmission tree anyway
+			
+			if (fromHost.equals(toHost)) {
+				//System.out.println(e.toOutput());
+				
+				// get the already existing transmission node from the fromHost
+				TransmissionNode tn_parent_fromHost   = retrieveTransmissionNode(fromHost);
+				
+
+				//System.out.println("TransmissionTree.processEvent - DEATH event for "+fromHost.toString());
+				
+				if (tn_parent_fromHost != null) {
+			
+					// make a new internal transmission node from the fromHost
+					TransmissionNode tn_internal_fromHost = makeNewTransmissionNode(tn_parent_fromHost, fromHost, time);
+			
+					// make a new dead transmission node for the toHost (which should be the same as the fromHost anyway)
+					DeadNode dn_toHost    		  	  = makeNewDeadNode(tn_parent_fromHost, toHost, time);
+				
+					// add new transmission nodes to transmission tree
+					nodes.add(tn_internal_fromHost);
+					nodes.add(dn_toHost);
+			
+					// update the most recent transmission node from the fromHost
+					mostRecentNodes.remove(tn_parent_fromHost);
+					mostRecentNodes.add(tn_internal_fromHost);
+				
+					// do not add the dead node to the most recent nodes because you cannot attach to it
+				}
+				
+			} else {
+				System.out.println("TransmissionTree.processEvent - WARNING - Death event is not correctly specified");
+			}
+			
 			
 		} else {
 		

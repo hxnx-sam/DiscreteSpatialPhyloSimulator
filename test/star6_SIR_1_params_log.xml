@@ -1,0 +1,89 @@
+<?xml version="1.0" standalone="yes"?>
+
+<!-- File Created by DiscreteSpatialPhyloSimulator - 28 Oct 2015 -->
+<!-- Log file created on : 2015/10/28 15:52:27 -->
+
+<DSPS>
+<General>
+	<parameter id="Seed" value="123457"/>
+	<parameter id="Path" value="test//"/>
+	<parameter id="Rootname" value="star6_SIR"/>
+	<parameter id="Nreps" value="5"/>
+	<parameter id="Rep" value="1"/>
+	<parameter id="Tauleap" value="0.0"/>
+	<parameter id="StopWhen" value="default"/>
+</General>
+<Demes>
+	<Deme>
+		<parameter id="DemeUID" value="0"/>
+		<parameter id="DemeName" value="Deme0"/>
+		<parameter id="NumberOfHosts" value="100"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Deme1,Deme2,Deme3,Deme4,Deme5"/>
+		<parameter id="MigrationParameters" value="0.02,0.02,0.02,0.02,0.02"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="1"/>
+		<parameter id="DemeName" value="Deme1"/>
+		<parameter id="NumberOfHosts" value="100"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Deme0"/>
+		<parameter id="MigrationParameters" value="0.1"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="2"/>
+		<parameter id="DemeName" value="Deme2"/>
+		<parameter id="NumberOfHosts" value="100"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Deme0"/>
+		<parameter id="MigrationParameters" value="0.1"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="3"/>
+		<parameter id="DemeName" value="Deme3"/>
+		<parameter id="NumberOfHosts" value="100"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Deme0"/>
+		<parameter id="MigrationParameters" value="0.1"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="4"/>
+		<parameter id="DemeName" value="Deme4"/>
+		<parameter id="NumberOfHosts" value="100"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Deme0"/>
+		<parameter id="MigrationParameters" value="0.1"/>
+	</Deme>
+	<Deme>
+		<parameter id="DemeUID" value="5"/>
+		<parameter id="DemeName" value="Deme5"/>
+		<parameter id="NumberOfHosts" value="100"/>
+		<parameter id="ModelType" value="SIR"/>
+		<parameter id="InfectionParameters" value="1.0,0.5"/>
+		<parameter id="DemeType" value="INFECTION_OVER_NETWORK"/>
+		<parameter id="Neighbours" value="Deme0"/>
+		<parameter id="MigrationParameters" value="0.1"/>
+	</Deme>
+</Demes>
+<Sampler>
+	<parameter id="SamplerType" value="individualBasedModel.RandomInfectedSampler"/>
+	<parameter id="probabilityOfSamplingInfected" value="0.5"/>
+	<parameter id="delay" value="1.0E-6"/>
+	<parameter id="stdev_delay" value="1.0E-6"/>
+	<parameter id="useRandomMeanDelay" value="false"/>
+	<parameter id="allowPopulationSampling" value="true"/>
+	<parameter id="sampleEvery" value="5.0"/>
+	<parameter id="allowEventSampling" value="true"/>
+</Sampler>
+</DSPS>
+<!-- Log file closed on : 2015/10/28 15:52:27 -->

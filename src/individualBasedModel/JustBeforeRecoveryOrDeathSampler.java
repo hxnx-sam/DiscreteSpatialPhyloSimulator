@@ -2,20 +2,20 @@ package individualBasedModel;
 
 import io.Parameter;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
- * class to take a sample of all infecteds just before they recover
- * @author sam
- * @created 25 June 2013
- * @version 4 July 2013
+ * class to take a sample of all infecteds just before they recover or die
+ * @author Samantha Lycett
+ * @created 28 Oct 2015
+ * @version 28 Oct 2015 - the same as JustBeforeRecovery but added or die functionality
  */
-public class JustBeforeRecoverySampler implements Sampler {
-	
+public class JustBeforeRecoveryOrDeathSampler implements Sampler {
+
 	protected double justBefore = 1e-16;
 
-	public JustBeforeRecoverySampler() {
+	public JustBeforeRecoveryOrDeathSampler() {
 		
 	}
 	
@@ -38,7 +38,8 @@ public class JustBeforeRecoverySampler implements Sampler {
 		
 		List<Event> samplingEvents = null;
 		
-		if ((eventPerformed.success) && (eventPerformed.type == EventType.RECOVERY)) {
+		if (eventPerformed.success) {
+			if (eventPerformed.type == EventType.RECOVERY) {
 				//System.out.println("Attempt to set sampling from "+eventPerformed.toOutput());
 			
 				samplingEvents 	= new ArrayList<Event>();
@@ -48,6 +49,21 @@ public class JustBeforeRecoverySampler implements Sampler {
 				samplingEvents.add(e);
 			
 				//System.out.println("Sampling: "+e.toOutput());
+			} else if (eventPerformed.type == EventType.DEATH) {
+				// 28 oct 2015
+				// need to check whether the host actually was in infected state first, otherwise no need to sample
+				// (note could make this exposed or infected, but I think actually just infected here)
+				
+				samplingEvents 	= new ArrayList<Event>();
+				Event e 		= new Event();
+				
+				Host h = eventPerformed.toHost;
+				if ( h.getState().equals(InfectionState.INFECTED)  ) {
+					e.setSamplingEvent(eventPerformed.toHost, eventPerformed.creationTime, eventPerformed.actionTime - justBefore);
+					samplingEvents.add(e);
+				}
+				
+			}
 		}
 		
 		return samplingEvents;
@@ -63,38 +79,6 @@ public class JustBeforeRecoverySampler implements Sampler {
 		
 		return params;
 	}
-	
-	/*
-	@Override
-	
-	public void setSamplerParameters(List<String[]> params) {
-		
-		int i 				= 0;
-		boolean found 		= false;
-		String className 	= this.getClass().getName(); 
-		
-		while ( (i < params.size()) && (!found) ) {
-			String[] pairs = params.get(i);
-			
-			if (pairs[0].equals("SamplerType")) {
-				found = (pairs[1].equals(className));
-			}
-			
-			i++;
-		}
-		
-		if (found) {
-			while (i < params.size()) {
-				String[] pairs = params.get(i);
-				
-				if (pairs[0].equals("justBefore")) {
-					justBefore = Double.parseDouble(pairs[1]);
-				}
-				i++;
-			}
-		}
-	}
-	*/
 	
 	@Override
 	public void setSamplerParameters(List<Parameter> params) {

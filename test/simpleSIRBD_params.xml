@@ -10,15 +10,15 @@
 	<parameter id="StopWhen" value="NoI,AllI,AllR,maxIts=10000"/>
 </General>
 <Sampler>
-	<parameter id="SamplerType" value="individualBasedModel.JustBeforeRecoverySampler"/>
+	<parameter id="SamplerType" value="individualBasedModel.JustBeforeRecoveryOrDeathSampler"/>
 	<parameter id="justBefore" value="1.0E-16"/>
 </Sampler>
 <Demes>
 	<Deme>
 		<parameter id="DemeUID" value="0"/>
 		<parameter id="DemeName" value="0"/>
-		<parameter id="BirthRate" value="0.001"/>
-		<parameter id="DeathRate" value="0.0005"/>
+		<parameter id="BirthRate" value="0.1"/>
+		<parameter id="DeathRate" value="0.1"/>
 	</Deme>
 </Demes>
 <PopulationStructure>

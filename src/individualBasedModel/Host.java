@@ -77,7 +77,8 @@ public class Host {
 	}
 	
 	public String getNameWithDeme() {
-		return (getName() + "_" + myDeme.getName());
+		//return (getName() + "_" + myDeme.getName());
+		return (name + "_" + myDeme);
 	}
 	
 	public long getUid() {
