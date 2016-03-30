@@ -9,6 +9,7 @@ import java.util.List;
  * @author Samantha Lycett
  * @created 4 July 2013
  * @version 4 July 2013
+ * @version 30 March 2016 - include JustBeforeRecoveryOrDeath sampler
  */
 public class SamplerFactory {
 	
@@ -36,6 +37,13 @@ public class SamplerFactory {
 					
 				} else if ( samplerType.contains(JustBeforeRecoverySampler.class.getName()) ) {
 					sampler = new JustBeforeRecoverySampler();
+					
+					if (echo) {
+						System.out.println("Creating "+sampler.getClass().getName());
+					}
+					
+				} else if ( samplerType.contains(JustBeforeRecoveryOrDeathSampler.class.getName()) ) {
+					sampler = new JustBeforeRecoveryOrDeathSampler();
 					
 					if (echo) {
 						System.out.println("Creating "+sampler.getClass().getName());
