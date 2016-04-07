@@ -489,6 +489,12 @@ public class Population {
 			} else if (p.getId().equals("InfectionParameters")) {
 				all_deme_params.add(p);
 				
+			} else if (p.getId().equals("BirthRate")) {
+				all_deme_params.add(p);
+				
+			} else if (p.getId().equals("DeathRate")) {
+				all_deme_params.add(p);
+				
 			} else if (p.getId().equals("ProbabilityInfectionAnyOtherDeme")) {
 				all_deme_params.add(p);
 				
