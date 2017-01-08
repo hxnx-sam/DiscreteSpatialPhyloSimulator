@@ -30,6 +30,7 @@ import trees.TransmissionNode;
  * @version 25 Oct  2015 - checking validations
  * @version 28 Oct  2015 - birth and death are working
  * @version 30 Mar  2016 - included JustBeforeRecoveryOrDeathSampler (in SamplerFactory)
+ * @version 8  Jan  2017 - eventLog now records all event types if SI model - see initialiseLoggers
  */
 
 public class DiscreteSpatialPhyloSimulator {
@@ -37,7 +38,7 @@ public class DiscreteSpatialPhyloSimulator {
 	//////////////////////////////////////////////////////////////////////////////////
 	// class variables
 	
-	public final static String 				  version 		= "DiscreteSpatialPhyloSimulator - 30 Mar 2016";
+	public final static String 				  version 		= "DiscreteSpatialPhyloSimulator - 8 Jan 2017";
 	protected 	 static List<List<Parameter>> params;		// from configuration XML
 	
 	protected static String		path 	 					= "test//";
@@ -107,6 +108,7 @@ public class DiscreteSpatialPhyloSimulator {
 		} else {
 			// records everything
 			eventLogger		 = new Logger(path, rootname + "_" +rep + "_eventLog", ".csv");
+			eventLogger.setRecordAllTypes();
 		}
 		eventLogger.setEchoEvery(0);
 		
@@ -419,6 +421,9 @@ public class DiscreteSpatialPhyloSimulator {
 		//runFromXML("validation//simpleSI_params.xml");
 		//repCounter = 0;
 		//runFromXML("validation//simpleSIR_params.xml");
+		
+		repCounter = 0;
+		runFromXML("validation//ONE_DEME_SI_params.xml");
 		
 		repCounter = 0;
 		runFromXML("validation//ONE_DEME_SIR_params.xml");

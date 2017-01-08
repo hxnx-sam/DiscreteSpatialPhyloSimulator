@@ -12,6 +12,7 @@ import individualBasedModel.EventType;
  * basic string logging class
  * @author sam
  * @created 17 June 2013
+ * @version 8 Jan 2017
  */
 public class Logger {
 
@@ -99,6 +100,14 @@ public class Logger {
 	
 	public void setRecordType(List<EventType> es) {
 		this.recordTypes.addAll(es);
+	}
+	
+	public void setRecordAllTypes() {
+		write("Record All Events");
+		write( (new Event()).toOutputHeader() );
+		for (EventType e : EventType.values()) {
+			this.recordTypes.add(e);
+		}
 	}
 	
 	/**
